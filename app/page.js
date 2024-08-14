@@ -3,6 +3,7 @@ import Features from "./_components/features";
 import Hero from "./_components/Hero";
 import Pricing from "./_components/Pricing";
 import SocialProof from "./_components/SocialProof";
+import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Features/>
       <SocialProof/>
       <Pricing/>
+      <Testimonials/>
     </div>
   );
 }
