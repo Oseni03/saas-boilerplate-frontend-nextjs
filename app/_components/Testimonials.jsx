@@ -84,7 +84,7 @@ const Testimonials = () => {
 				<div className="text-center">
 					<a
 						href="#"
-						className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-primary rounded-lg border border-primary text-white"
+						className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium focus:outline-none bg-primary rounded-lg border border-primary text-white"
 					>
 						Show more...
 					</a>

@@ -1,4 +1,5 @@
 import React from "react";
+import ShimmerButton from "@/components/magicui/shimmer-button";
 
 function Hero() {
 	return (
@@ -18,20 +19,12 @@ function Hero() {
 						elit. Nesciunt illo tenetur fuga ducimus numquam ea!
 					</p>
 
-					<div className="mt-8 flex flex-wrap justify-center gap-4">
-						<a
-							className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-destructive focus:outline-none focus:ring active:bg-primary sm:w-auto"
-							href="#"
-						>
-							Get Started
-						</a>
-
-						<a
-							className="block w-full rounded px-12 py-3 text-sm font-medium text-primary shadow hover:text-transparent bg-clip-text bg-primary sm:w-auto"
-							href="#"
-						>
-							Learn More
-						</a>
+					<div className="z-10 flex min-h-[16rem] items-center justify-center">
+						<ShimmerButton className="shadow-2xl">
+							<span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 md:text-xl lg:text-3xl">
+								Get started
+							</span>
+						</ShimmerButton>
 					</div>
 				</div>
 			</div>
