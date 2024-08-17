@@ -1,9 +1,9 @@
 import React from 'react'
 
-function page() {
+function Page() {
   return (
     <div>Validate OTP Page</div>
   )
 }
 
-export default page
+export default Page

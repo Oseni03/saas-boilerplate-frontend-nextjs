@@ -1,12 +1,11 @@
-import CompanyLogos from "./_components/CompanyLogos";
-import Features from "./_components/features";
-import Footer from "./_components/Footer";
-import Hero from "./_components/Hero";
-import Pricing from "./_components/Pricing";
-import SocialProof from "./_components/SocialProof";
-import Testimonials from "./_components/Testimonials";
+import CompanyLogos from "./_components/common/CompanyLogos";
+import Features from "./_components/common/Features";
+import Hero from "./_components/common/Hero";
+import Pricing from "./_components/common/Pricing";
+import SocialProof from "./_components/common/SocialProof";
+import Testimonials from "./_components/common/Testimonials";
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
       <Hero/>
@@ -15,7 +14,6 @@ export default function Home() {
       <SocialProof/>
       <Pricing/>
       <Testimonials/>
-      <Footer/>
     </div>
   );
 }

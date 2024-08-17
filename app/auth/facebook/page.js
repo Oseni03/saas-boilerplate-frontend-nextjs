@@ -2,7 +2,7 @@ import React from 'react'
 
 function Page() {
   return (
-    <div>Dashboard</div>
+    <div>Facebook</div>
   )
 }
 
