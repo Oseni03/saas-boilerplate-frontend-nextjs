@@ -31,6 +31,12 @@ const authApiSlice = apiSlice.injectEndpoints({
 				body: { email, password },
 			}),
 		}),
+		tokenRefresh: builder.mutation({
+			query: () => ({
+				url: "/auth/token-refresh/",
+				method: "POST",
+			}),
+		}),
 	}),
 });
 
@@ -39,4 +45,5 @@ export const {
 	useSocialAuthenticateMutation,
 	useLoginMutation,
 	useRegisterMutation,
+	useTokenRefreshMutation,
 } = authApiSlice;
