@@ -38,9 +38,15 @@ const authApiSlice = apiSlice.injectEndpoints({
 				method: "POST",
 			}),
 		}),
-		activateAccount: builder.mutation({
+		activation: builder.mutation({
 			query: ({ user, token }) => ({
 				url: `/auth/activate/${user}/${token}/`,
+				method: "POST",
+			}),
+		}),
+		logout: builder.mutation({
+			query: () => ({
+				url: `/auth/logout/`,
 				method: "POST",
 			}),
 		}),
@@ -53,5 +59,6 @@ export const {
 	useLoginMutation,
 	useRegisterMutation,
 	useTokenRefreshMutation,
-	useActivateAccountMutation,
+	useActivationMutation,
+	useLogoutMutation,
 } = authApiSlice;
