@@ -17,7 +17,18 @@ const authApiSlice = apiSlice.injectEndpoints({
 				},
 			}),
 		}),
+		login: builder.mutation({
+			query: ({ email, password }) => ({
+				url: "/auth/login/",
+				method: "POST",
+				body: { email, password },
+			}),
+		}),
 	}),
 });
 
-export const { useRetrieveUserQuery } = authApiSlice;
+export const {
+	useRetrieveUserQuery,
+	useSocialAuthenticateMutation,
+	useLoginMutation,
+} = authApiSlice;
