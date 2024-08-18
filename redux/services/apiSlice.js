@@ -3,11 +3,13 @@ import { setAuth, logout } from '@/redux/features/authSlice'
 import { Mutex } from 'async-mutex'
 
 // create a new mutex
-const mutex = new Mutex()
-const baseQuery = fetchBaseQuery({ 
-    baseUrl: `${process.env.NEXT_PUBLIC_HOST}/api`,
-    credentials: `include`,
-})
+console.log(process.env.NEXT_PUBLIC_HOST);
+
+const mutex = new Mutex();
+const baseQuery = fetchBaseQuery({
+	baseUrl: `${process.env.NEXT_PUBLIC_HOST}/api`,
+	credentials: `include`,
+});
 const baseQueryWithReauth = async (args, api, extraOptions) => {
   // wait until the mutex is available without locking it
   await mutex.waitForUnlock()

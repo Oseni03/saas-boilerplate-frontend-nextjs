@@ -1,9 +1,8 @@
-import React from 'react'
+"use client";
+import React from "react";
 
-function Page() {
-  return (
-    <div>Activation Endpoint</div>
-  )
+function Page({ user, token }) {
+	return <div>Activation Endpoint</div>;
 }
 
-export default Page
+export default Page;
