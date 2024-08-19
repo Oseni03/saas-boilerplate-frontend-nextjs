@@ -3,6 +3,11 @@ import nextImage from "@/public/next.svg";
 import Image from "next/image";
 import RegisterForm from "@/app/_components/forms/RegisterForm";
 
+export const metadata = {
+	title: "Register - Boilerplate",
+	description: "Boilerplate register page",
+};
+
 function Page() {
 	return (
 		<section className="bg-gray-50 dark:bg-gray-900">

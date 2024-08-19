@@ -4,6 +4,11 @@ import { useRouter } from "next/navigation";
 import { useActivationMutation } from "@/redux/features/authApiSlice";
 import { toast } from "react-toastify";
 
+export const metadata = {
+	title: "Account activation - Boilerplate",
+	description: "Boilerplate account activation page",
+};
+
 function Page({ params }) {
 	const router = useRouter();
 	const [activation] = useActivationMutation();
