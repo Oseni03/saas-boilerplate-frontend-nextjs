@@ -1,6 +1,7 @@
 import React from "react";
 import Input from "./Input";
 import Spinner from "../common/Spinner";
+import { Button } from "@/components/ui/button";
 
 function Form({ config, isLoading, btnText, onChange, onSubmit }) {
 	return (
@@ -17,13 +18,13 @@ function Form({ config, isLoading, btnText, onChange, onSubmit }) {
 					{input.labelText}
 				</Input>
 			))}
-			<button
+			<Button
 				type="submit"
 				className="w-full text-white bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
 			>
 				{isLoading ? <Spinner /> : `${btnText}`}
 				{/* Should display the spinner component instead of "Loading" */}
-			</button>
+			</Button>
 		</form>
 	);
 }

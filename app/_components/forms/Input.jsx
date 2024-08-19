@@ -1,6 +1,14 @@
 import React from "react";
+import { Input } from "@/components/ui/input";
 
-function Input({ labelId, type, onChange, value, children, required = false }) {
+function MyInput({
+	labelId,
+	type,
+	onChange,
+	value,
+	children,
+	required = false,
+}) {
 	console.log(labelId, type, children);
 	return (
 		<div>
@@ -10,11 +18,11 @@ function Input({ labelId, type, onChange, value, children, required = false }) {
 			>
 				{children}
 			</label>
-			<input
+			<Input
 				type={type}
 				name={labelId}
 				id={labelId}
-				className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
+				// className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
 				// placeholder="name@company.com"
 				value={value}
 				onChange={onChange}
@@ -24,4 +32,4 @@ function Input({ labelId, type, onChange, value, children, required = false }) {
 	);
 }
 
-export default Input;
+export default MyInput;
