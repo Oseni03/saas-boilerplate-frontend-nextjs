@@ -7,6 +7,11 @@ import Pricing from "./_components/common/Pricing";
 import SocialProof from "./_components/common/SocialProof";
 import Testimonials from "./_components/common/Testimonials";
 
+export const metadata = {
+	title: "Home page - Boilerplate",
+	description: "Boilerplate home page",
+};
+
 export default function Page() {
 	return (
 		<div>
