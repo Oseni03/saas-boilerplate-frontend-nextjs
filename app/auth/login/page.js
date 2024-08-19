@@ -4,6 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import LoginForm from "@/app/_components/forms/LoginForm";
 
+export const metadata = {
+	title: "Login - Boilerplate",
+	description: "Boilerplate login page",
+};
+
 export default function Page() {
 	return (
 		<section className="bg-gray-50 dark:bg-gray-900">
