@@ -14,6 +14,7 @@ function Form({ config, isLoading, btnText, onChange, onSubmit }) {
 					onChange={onChange}
 					value={input.value}
 					required={input.required}
+					link={input.link}
 				>
 					{input.labelText}
 				</Input>
@@ -21,6 +22,7 @@ function Form({ config, isLoading, btnText, onChange, onSubmit }) {
 			<Button
 				type="submit"
 				className="w-full text-white bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+				disabled={isLoading}
 			>
 				{isLoading ? <Spinner /> : `${btnText}`}
 				{/* Should display the spinner component instead of "Loading" */}

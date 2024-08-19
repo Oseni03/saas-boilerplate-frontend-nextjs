@@ -19,6 +19,10 @@ function LoginForm() {
 			type: "password",
 			value: password,
 			required: true,
+			link: {
+				linkText: "Forgotten password?",
+				linkUrl: "/password-reset",
+			},
 		},
 	];
 
