@@ -18,13 +18,13 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
       const release = await mutex.acquire()
       try {
         const refreshResult = await baseQuery(
-          {
-            url: "auth/token-refresh/",
-            method: "POST"
-          },
-          api,
-          extraOptions
-        )
+			{
+				url: "auth/jwt/refresh/",
+				method: "POST",
+			},
+			api,
+			extraOptions
+		);
         if (refreshResult.data) {
           api.dispatch(setAuth())
           // retry the initial query
