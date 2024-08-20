@@ -20,7 +20,7 @@ function LoginForm() {
 			value: password,
 			required: true,
 			link: {
-				linkText: "Forgotten password?",
+				linkText: "Forgot password?",
 				linkUrl: "/password-reset",
 			},
 		},

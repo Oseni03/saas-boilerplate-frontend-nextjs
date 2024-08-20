@@ -1,6 +1,7 @@
 import React from "react";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import { Label } from "@/components/ui/label";
 
 function MyInput({
 	labelId,
@@ -15,12 +16,12 @@ function MyInput({
 	return (
 		<div>
 			<div className="flex justify-between align-center">
-				<label
+				<Label
 					htmlFor={labelId}
 					className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
 				>
 					{children}
-				</label>
+				</Label>
 				{link && (
 					<div className="text-sm">
 						<Link
