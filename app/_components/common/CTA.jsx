@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function CTA() {
@@ -12,12 +13,12 @@ function CTA() {
 						Try Flowbite Platform for 30 days. No credit card
 						required.
 					</p>
-					<a
+					<Link
 						href="#"
 						className="text-white bg-primary hover:bg-primary focus:ring-4 focus:ring-primary font-bold rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 dark:bg-primary dark:hover:bg-primary focus:outline-none dark:focus:ring-primary"
 					>
 						Free trial for 7 days
-					</a>
+					</Link>
 				</div>
 			</div>
 		</section>

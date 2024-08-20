@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function CompanyLogos() {
@@ -8,7 +9,7 @@ function CompanyLogos() {
 					You’ll be in good company
 				</h2>
 				<div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
-					<a href="#" className="flex justify-center items-center">
+					<Link href="#" className="flex justify-center items-center">
 						<svg
 							className="h-9 hover:text-gray-900 dark:hover:text-white"
 							viewBox="0 0 125 35"
@@ -22,8 +23,8 @@ function CompanyLogos() {
 								fill="currentColor"
 							/>
 						</svg>
-					</a>
-					<a href="#" className="flex justify-center items-center">
+					</Link>
+					<Link href="#" className="flex justify-center items-center">
 						<svg
 							className="h-9 hover:text-gray-900 dark:hover:text-white"
 							viewBox="0 0 86 29"
@@ -37,8 +38,8 @@ function CompanyLogos() {
 								fill="currentColor"
 							/>
 						</svg>
-					</a>
-					<a href="#" className="flex justify-center items-center">
+					</Link>
+					<Link href="#" className="flex justify-center items-center">
 						<svg
 							className="h-8 hover:text-gray-900 dark:hover:text-white"
 							viewBox="0 0 151 34"
@@ -62,9 +63,9 @@ function CompanyLogos() {
 								</clipPath>
 							</defs>
 						</svg>
-					</a>
+					</Link>
 
-					<a href="#" className="flex justify-center items-center">
+					<Link href="#" className="flex justify-center items-center">
 						<svg
 							className="h-9 hover:text-gray-900 dark:hover:text-white"
 							viewBox="0 0 124 38"
@@ -76,8 +77,8 @@ function CompanyLogos() {
 								fill="currentColor"
 							/>
 						</svg>
-					</a>
-					<a href="#" className="flex justify-center items-center">
+					</Link>
+					<Link href="#" className="flex justify-center items-center">
 						<svg
 							className="h-9 hover:text-gray-900 dark:hover:text-white"
 							viewBox="0 0 137 37"
@@ -157,8 +158,8 @@ function CompanyLogos() {
 								fill="currentColor"
 							/>
 						</svg>
-					</a>
-					<a href="#" className="flex justify-center items-center">
+					</Link>
+					<Link href="#" className="flex justify-center items-center">
 						<svg
 							className="h-6 hover:text-gray-900 dark:hover:text-white"
 							viewBox="0 0 124 21"
@@ -214,7 +215,7 @@ function CompanyLogos() {
 								fill="currentColor"
 							/>
 						</svg>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</section>

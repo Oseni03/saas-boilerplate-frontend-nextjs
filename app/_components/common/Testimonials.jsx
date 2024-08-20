@@ -81,14 +81,14 @@ const Testimonials = () => {
 						</figure>
 					))}
 				</div>
-				<div className="text-center">
-					<a
+				{/* <div className="text-center">
+					<Link
 						href="#"
 						className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium focus:outline-none bg-primary rounded-lg border border-primary text-white"
 					>
 						Show more...
-					</a>
-				</div>
+					</Link>
+				</div> */}
 			</div>
 		</section>
 	);

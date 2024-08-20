@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Pricing = () => {
@@ -128,12 +129,12 @@ const Pricing = () => {
 								</span>
 							</li>
 						</ul>
-						<a
+						<Link
 							href="#"
 							className="text-white bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary"
 						>
 							Get started
-						</a>
+						</Link>
 					</div>
 
 					{/* Pricing Card */}
@@ -251,12 +252,12 @@ const Pricing = () => {
 								</span>
 							</li>
 						</ul>
-						<a
+						<Link
 							href="#"
 							className="text-white bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary"
 						>
 							Get started
-						</a>
+						</Link>
 					</div>
 
 					{/* Pricing Card */}
@@ -374,12 +375,12 @@ const Pricing = () => {
 								</span>
 							</li>
 						</ul>
-						<a
+						<Link
 							href="#"
 							className="text-white bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary"
 						>
 							Get started
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>
