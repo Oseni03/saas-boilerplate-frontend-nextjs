@@ -17,7 +17,7 @@ function useVerify() {
 			.finally(() => {
 				dispatch(finishInitialLoad());
 			});
-	});
+	}, []);
 }
 
 export default useVerify;

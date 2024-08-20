@@ -6,7 +6,7 @@ const authApiSlice = apiSlice.injectEndpoints({
 			query: () => "/users/me/",
 		}),
 		socialAuthenticate: builder.mutation({
-			query: ({ provider, state, code }) => ({
+			query: ({ provider }) => ({
 				// url: `/o/${provider}?state=${encodeURIComponent(
 				// 	state
 				// )}&code=${encodeURIComponent(code)}`,

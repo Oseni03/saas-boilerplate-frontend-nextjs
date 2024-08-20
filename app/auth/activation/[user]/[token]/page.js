@@ -24,7 +24,7 @@ function Page({ params }) {
 				console.log("Gotten here finally");
 				router.push("/auth/login");
 			});
-	});
+	}, []);
 
 	return (
 		<section className="bg-gray-50 dark:bg-gray-900">
