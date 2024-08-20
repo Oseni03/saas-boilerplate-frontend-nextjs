@@ -3,10 +3,13 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useLoginMutation } from "@/redux/features/authApiSlice";
+import { setAuth } from "@/redux/features/authSlice";
+import { useAppDispatch } from "@/redux/hooks";
 
 function useLogin() {
 	const [login, { isLoading }] = useLoginMutation();
 	const router = useRouter();
+	const dispatch = useAppDispatch();
 
 	const [formData, setFormData] = useState({
 		email: "",
@@ -26,6 +29,7 @@ function useLogin() {
 		login({ email, password })
 			.unwrap()
 			.then(() => {
+				dispatch(setAuth());
 				toast.success("Login successful");
 				router.push("/dashboard");
 			})

@@ -3,8 +3,6 @@ import { setAuth, logout } from '@/redux/features/authSlice'
 import { Mutex } from 'async-mutex'
 
 // create a new mutex
-console.log(process.env.NEXT_PUBLIC_HOST);
-
 const mutex = new Mutex();
 const baseQuery = fetchBaseQuery({
 	baseUrl: `${process.env.NEXT_PUBLIC_HOST}/api`,

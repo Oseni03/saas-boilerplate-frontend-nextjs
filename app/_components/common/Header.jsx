@@ -1,8 +1,35 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { useLogoutMutation } from "@/redux/features/authApiSlice";
+import { logout as setLogout } from "@/redux/features/authSlice";
 
 export default function Header() {
+	const router = useRouter();
+	const dispatch = useAppDispatch();
+
+	const { logout } = useLogoutMutation();
+	const { isAuthenticated } = useAppSelector((state) => state.auth);
+
+	const handleLogout = () => {
+		logout()
+			.unwrap()
+			.then(() => {
+				dispatch(setLogout());
+			})
+			.finally(() => {
+				router.push("/");
+			});
+	};
+
+	const authLinks = <div>AUTH LINKS</div>;
+
+	const guestLinks = <div>GUEST LINKS</div>;
+
 	return (
 		<div>
 			<nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -24,6 +51,7 @@ export default function Header() {
 					</a>
 					<div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 						<Button>Get started</Button>
+						{isAuthenticated ? authLinks : guestLinks}
 						<button
 							data-collapse-toggle="navbar-sticky"
 							type="button"
@@ -55,37 +83,38 @@ export default function Header() {
 					>
 						<ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 							<li>
-								<a
-									href="#"
+								<Link
+									href="/"
 									className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
 									aria-current="page"
 								>
 									Home
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
+								<Link
 									href="#"
 									className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
 								>
 									About
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
+								<Link
 									href="#"
 									className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
 								>
 									Services
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
+								<Link
 									href="#"
 									className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
 								>
 									Contact
-								</a>
+								</Link>
+								{isAuthenticated ? authLinks : guestLinks}
 							</li>
 						</ul>
 					</div>

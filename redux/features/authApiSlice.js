@@ -33,8 +33,15 @@ const authApiSlice = apiSlice.injectEndpoints({
 			}),
 		}),
 		tokenRefresh: builder.mutation({
+			query: (refresh) => ({
+				url: "/auth/jwt/refresh/",
+				method: "POST",
+				body: { refresh },
+			}),
+		}),
+		tokenVerify: builder.mutation({
 			query: () => ({
-				url: "/auth/token-refresh/",
+				url: "/auth/jwt/verify/",
 				method: "POST",
 			}),
 		}),
@@ -73,6 +80,7 @@ export const {
 	useLoginMutation,
 	useRegisterMutation,
 	useTokenRefreshMutation,
+	useTokenVerifyMutation,
 	useActivationMutation,
 	useLogoutMutation,
 	useResetPasswordMutation,
