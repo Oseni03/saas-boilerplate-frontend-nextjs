@@ -1,18 +1,18 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import NavLink from "./NavLink";
+import { useRouter, usePathname } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useLogoutMutation } from "@/redux/features/authApiSlice";
 import { logout as setLogout } from "@/redux/features/authSlice";
 
 export default function Header() {
 	const router = useRouter();
+	const pathname = usePathname();
 	const dispatch = useAppDispatch();
 
-	const { logout } = useLogoutMutation();
+	const [logout] = useLogoutMutation();
 	const { isAuthenticated } = useAppSelector((state) => state.auth);
 
 	const handleLogout = () => {
@@ -20,15 +20,45 @@ export default function Header() {
 			.unwrap()
 			.then(() => {
 				dispatch(setLogout());
-			})
-			.finally(() => {
-				router.push("/");
 			});
 	};
 
-	const authLinks = <div>AUTH LINKS</div>;
+	const isSelected = (path) => (pathname === path ? true : false);
 
-	const guestLinks = <div>GUEST LINKS</div>;
+	const guestLinks = () => (
+		<>
+			<li>
+				<NavLink isSelected={isSelected("/auth/pricing")} href="#">
+					Pricing
+				</NavLink>
+			</li>
+		</>
+	);
+
+	const authLinks = () => (
+		<>
+			<li>
+				<NavLink isSelected={isSelected("/auth/billing")} href="#">
+					Billing
+				</NavLink>
+			</li>
+		</>
+	);
+
+	const guestButtons = () => (
+		<>
+			<NavLink onClick={() => router.push("/auth/register")}>
+				Get started
+			</NavLink>
+		</>
+	);
+
+	const authButtons = () => (
+		<>
+			<NavLink>Logout</NavLink>
+			{/* onClick={handleLogout()} */}
+		</>
+	);
 
 	return (
 		<div>
@@ -50,8 +80,7 @@ export default function Header() {
 						</span>
 					</a>
 					<div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-						<Button>Get started</Button>
-						{isAuthenticated ? authLinks : guestLinks}
+						{isAuthenticated ? authButtons() : guestButtons()}
 						<button
 							data-collapse-toggle="navbar-sticky"
 							type="button"
@@ -83,39 +112,30 @@ export default function Header() {
 					>
 						<ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 							<li>
-								<Link
+								<NavLink
+									isSelected={isSelected("/auth/login")}
 									href="/"
-									className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-									aria-current="page"
 								>
 									Home
-								</Link>
+								</NavLink>
 							</li>
 							<li>
-								<Link
+								<NavLink
+									isSelected={isSelected("/auth/about")}
 									href="#"
-									className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
 								>
 									About
-								</Link>
+								</NavLink>
 							</li>
 							<li>
-								<Link
+								<NavLink
+									isSelected={isSelected("/auth/contact")}
 									href="#"
-									className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-								>
-									Services
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
 								>
 									Contact
-								</Link>
-								{isAuthenticated ? authLinks : guestLinks}
+								</NavLink>
 							</li>
+							{isAuthenticated ? authLinks() : guestLinks()}
 						</ul>
 					</div>
 				</div>

@@ -37,7 +37,7 @@ function LoginForm() {
 			/>
 			<p className="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
 				Don’t have an account yet?{" "}
-				<a href="#" className="font-medium text-primary">
+				<a href="/auth/register" className="font-medium text-primary">
 					Sign up
 				</a>
 			</p>

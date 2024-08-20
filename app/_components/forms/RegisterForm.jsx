@@ -34,7 +34,7 @@ function RegisterForm() {
 			/>
 			<p className="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
 				Already have an account?{" "}
-				<Link href="/auth/sign-in" className="font-medium text-primary">
+				<Link href="/auth/login" className="font-medium text-primary">
 					Sign in
 				</Link>
 			</p>
