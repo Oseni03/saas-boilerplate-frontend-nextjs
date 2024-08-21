@@ -5,8 +5,8 @@ import nextImage from "@/public/next.svg";
 import ForgotPasswordForm from "../_components/forms/forgotPasswordForm";
 
 export const metadata = {
-	title: "Password reset - Boilerplate",
-	description: "Boilerplate password reset page",
+	title: "Forgot password - Boilerplate",
+	description: "Boilerplate forgot password page",
 };
 
 function Page() {

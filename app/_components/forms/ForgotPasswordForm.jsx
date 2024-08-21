@@ -3,7 +3,7 @@ import Form from "./Form";
 import Link from "next/link";
 import usePasswordReset from "@/hooks/use-password-reset";
 
-function forgotPasswordForm() {
+function ForgotPasswordForm() {
 	const { email, isLoading, onChange, onSubmit } = usePasswordReset();
 
 	const config = [
@@ -35,4 +35,4 @@ function forgotPasswordForm() {
 	);
 }
 
-export default forgotPasswordForm;
+export default ForgotPasswordForm;

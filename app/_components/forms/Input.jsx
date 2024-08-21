@@ -12,7 +12,6 @@ function MyInput({
 	required = false,
 	link,
 }) {
-	console.log(labelId, type, children);
 	return (
 		<div>
 			<div className="flex justify-between align-center">
