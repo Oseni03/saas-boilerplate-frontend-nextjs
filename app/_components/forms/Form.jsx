@@ -22,12 +22,10 @@ function Form({ config, social, isLoading, btnText, onChange, onSubmit }) {
 			<Button type="submit" className="w-full" disabled={isLoading}>
 				{isLoading ? <Spinner /> : `${btnText}`}
 			</Button>
-			{social ? (
+			{social && (
 				<Button variant="outline" className="w-full">
-					Login with Google
+					{social.socialtext}
 				</Button>
-			) : (
-				""
 			)}
 		</form>
 	);

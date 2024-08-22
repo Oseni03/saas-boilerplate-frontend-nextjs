@@ -28,10 +28,14 @@ function LoginForm() {
 		},
 	];
 
+	const social = {
+		socialtext: "Login with Google",
+	};
+
 	return (
 		<Form
 			config={config}
-			social={true}
+			social={social}
 			isLoading={isLoading}
 			btnText="Sign in"
 			onChange={onChange}

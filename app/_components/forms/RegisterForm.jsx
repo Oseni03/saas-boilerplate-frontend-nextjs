@@ -23,22 +23,19 @@ function RegisterForm() {
 		},
 	];
 
+	const social = {
+		socialtext: "Sign up with Google",
+	};
+
 	return (
-		<div>
-			<Form
-				config={config}
-				isLoading={isLoading}
-				btnText="Sign up"
-				onChange={onChange}
-				onSubmit={onSubmit}
-			/>
-			<p className="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
-				Already have an account?{" "}
-				<Link href="/auth/login" className="font-medium text-primary">
-					Sign in
-				</Link>
-			</p>
-		</div>
+		<Form
+			config={config}
+			social={social}
+			isLoading={isLoading}
+			btnText="Sign up"
+			onChange={onChange}
+			onSubmit={onSubmit}
+		/>
 	);
 }
 
