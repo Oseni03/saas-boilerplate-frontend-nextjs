@@ -4,6 +4,7 @@ import Hero from "../components/common/Hero";
 import Pricing from "../components/common/Pricing";
 import Testimonials from "../components/common/Testimonials";
 import Header from "@/components/common/Header";
+import NewHeader from "@/components/common/NewHeader";
 import Footer from "@/components/common/Footer";
 
 export const metadata = {
@@ -14,7 +15,7 @@ export const metadata = {
 export default function Page() {
 	return (
 		<div>
-			<Header />
+			<NewHeader />
 			<Hero />
 			<Features />
 			<CTA />
