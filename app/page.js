@@ -1,8 +1,8 @@
-import CTA from "./_components/common/CTA";
-import Features from "./_components/common/Features";
-import Hero from "./_components/common/Hero";
-import Pricing from "./_components/common/Pricing";
-import Testimonials from "./_components/common/Testimonials";
+import CTA from "../components/common/CTA";
+import Features from "../components/common/Features";
+import Hero from "../components/common/Hero";
+import Pricing from "../components/common/Pricing";
+import Testimonials from "../components/common/Testimonials";
 
 export const metadata = {
 	title: "Home page - Boilerplate",

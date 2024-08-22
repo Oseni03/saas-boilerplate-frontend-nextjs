@@ -47,10 +47,10 @@ import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import SideBar from "../_components/dashboard/SideBar";
-import BreadCrumb from "../_components/dashboard/BreadCrumb";
-import Table from "../_components/dashboard/Table";
-import NavLink from "../_components/common/NavLink";
+import SideBar from "../../components/dashboard/SideBar";
+import BreadCrumb from "../../components/dashboard/BreadCrumb";
+import Table from "../../components/dashboard/Table";
+import NavLink from "../../components/common/NavLink";
 
 export default function Page() {
 	const tableConfig = {

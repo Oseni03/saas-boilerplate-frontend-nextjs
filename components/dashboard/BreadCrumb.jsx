@@ -12,7 +12,7 @@ import Link from "next/link";
 function BreadCrumb({ config }) {
 	return (
 		<Breadcrumb className="hidden md:flex">
-			<BreadcrumbList>
+			<BreadcrumbList key="1">
 				{config.map((item, index) =>
 					item.href ? (
 						<>

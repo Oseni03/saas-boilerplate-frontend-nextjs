@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import LoginForm from "@/app/_components/forms/LoginForm";
+import LoginForm from "@/components/forms/LoginForm";
 
 export const metadata = {
 	title: "Login - Boilerplate",
