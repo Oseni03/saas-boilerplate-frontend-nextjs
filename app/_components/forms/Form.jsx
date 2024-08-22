@@ -3,7 +3,7 @@ import Input from "./Input";
 import Spinner from "../common/Spinner";
 import { Button } from "@/components/ui/button";
 
-function Form({ config, isLoading, btnText, onChange, onSubmit }) {
+function Form({ config, social, isLoading, btnText, onChange, onSubmit }) {
 	return (
 		<form className="space-y-4 md:space-y-6 mb-3" onSubmit={onSubmit}>
 			{config.map((input) => (
@@ -19,14 +19,16 @@ function Form({ config, isLoading, btnText, onChange, onSubmit }) {
 					{input.labelText}
 				</Input>
 			))}
-			<Button
-				type="submit"
-				className="w-full text-white bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-				disabled={isLoading}
-			>
+			<Button type="submit" className="w-full" disabled={isLoading}>
 				{isLoading ? <Spinner /> : `${btnText}`}
-				{/* Should display the spinner component instead of "Loading" */}
 			</Button>
+			{social ? (
+				<Button variant="outline" className="w-full">
+					Login with Google
+				</Button>
+			) : (
+				""
+			)}
 		</form>
 	);
 }

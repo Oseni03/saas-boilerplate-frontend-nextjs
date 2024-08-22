@@ -13,30 +13,22 @@ function MyInput({
 	link,
 }) {
 	return (
-		<div>
-			<div className="flex justify-between align-center">
-				<Label
-					htmlFor={labelId}
-					className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-				>
-					{children}
-				</Label>
+		<div className="grid gap-2">
+			<div className="flex items-center">
+				<Label htmlFor={labelId}>{children}</Label>
 				{link && (
-					<div className="text-sm">
-						<Link
-							className="font-semibold text-primary"
-							href={link.linkUrl}
-						>
-							{link.linkText}
-						</Link>
-					</div>
+					<Link
+						href={link.linkUrl}
+						className="ml-auto inline-block text-sm underline"
+					>
+						{link.linkText}
+					</Link>
 				)}
 			</div>
 			<Input
 				type={type}
 				name={labelId}
 				id={labelId}
-				className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
 				// placeholder="name@company.com"
 				value={value}
 				onChange={onChange}

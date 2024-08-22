@@ -1,6 +1,8 @@
 "use client";
 import Form from "./Form";
 import useLogin from "@/hooks/use-login";
+import Link from "next/link";
+import Image from "next/image";
 
 function LoginForm() {
 	const { email, password, isLoading, onChange, onSubmit } = useLogin();
@@ -27,21 +29,14 @@ function LoginForm() {
 	];
 
 	return (
-		<div>
-			<Form
-				config={config}
-				isLoading={isLoading}
-				btnText="Sign in"
-				onChange={onChange}
-				onSubmit={onSubmit}
-			/>
-			<p className="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
-				Don’t have an account yet?{" "}
-				<a href="/auth/register" className="font-medium text-primary">
-					Sign up
-				</a>
-			</p>
-		</div>
+		<Form
+			config={config}
+			social={true}
+			isLoading={isLoading}
+			btnText="Sign in"
+			onChange={onChange}
+			onSubmit={onSubmit}
+		/>
 	);
 }
 
