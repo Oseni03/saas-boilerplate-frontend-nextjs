@@ -12,31 +12,30 @@ export const metadata = {
 function Page({ params }) {
 	const { user, token } = params;
 	return (
-		<section className="bg-gray-50 dark:bg-gray-900">
-			<div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-				<Link
-					href="/"
-					className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-				>
-					<Image
-						className="w-8 h-8 mr-2"
-						src={nextImage}
-						alt="logo"
-						width={100}
-						height={100}
-					/>
-					Boilerplate
-				</Link>
-				<div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-					<div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-						<h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-							Reset password
-						</h1>
+		<div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
+			<div className="flex items-center justify-center py-12">
+				<div className="mx-auto grid w-[350px] gap-6">
+					<div className="grid gap-2 text-center">
+						<h1 className="text-3xl font-bold">Set password</h1>
+						<p className="text-balance text-muted-foreground">
+							Enter your new password below
+						</p>
+					</div>
+					<div className="grid gap-4">
 						<PasswordResetForm user={user} token={token} />
 					</div>
 				</div>
 			</div>
-		</section>
+			<div className="hidden bg-muted lg:block">
+				<Image
+					src="/placeholder.svg"
+					alt="Image"
+					width="1920"
+					height="1080"
+					className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+				/>
+			</div>
+		</div>
 	);
 }
 

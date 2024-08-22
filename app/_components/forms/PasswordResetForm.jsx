@@ -17,15 +17,13 @@ function PasswordResetForm({ user, token }) {
 	];
 
 	return (
-		<div>
-			<Form
-				config={config}
-				isLoading={isLoading}
-				btnText="Reset password"
-				onChange={onChange}
-				onSubmit={onSubmit}
-			/>
-		</div>
+		<Form
+			config={config}
+			isLoading={isLoading}
+			btnText="Reset password"
+			onChange={onChange}
+			onSubmit={onSubmit}
+		/>
 	);
 }
 
