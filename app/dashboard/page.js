@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import {
 	ChevronLeft,
@@ -15,7 +14,6 @@ import {
 	Package2,
 	PanelLeft,
 	Search,
-	Settings,
 	ShoppingCart,
 	Truck,
 	Users2,
@@ -52,6 +50,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SideBar from "../_components/dashboard/SideBar";
 import BreadCrumb from "../_components/dashboard/BreadCrumb";
 import Table from "../_components/dashboard/Table";
+import NavLink from "../_components/common/NavLink";
 
 export default function Page() {
 	const tableConfig = {
@@ -395,6 +394,74 @@ export default function Page() {
 			],
 		],
 	};
+
+	const linksConfig = [
+		{
+			href: "#",
+			className:
+				"group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base",
+			children: (
+				<>
+					<Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
+					<span className="sr-only">Acme Inc</span>
+				</>
+			),
+		},
+		{
+			href: "/dashboard",
+			className:
+				"flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground",
+			children: (
+				<>
+					<Home className="h-5 w-5" />
+					Dashboard
+				</>
+			),
+		},
+		{
+			href: "#",
+			className: "flex items-center gap-4 px-2.5 text-foreground",
+			children: (
+				<>
+					<ShoppingCart className="h-5 w-5" />
+					Orders
+				</>
+			),
+		},
+		{
+			href: "#",
+			className:
+				"flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground",
+			children: (
+				<>
+					<Package className="h-5 w-5" />
+					Products
+				</>
+			),
+		},
+		{
+			href: "#",
+			className:
+				"flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground",
+			children: (
+				<>
+					<Users2 className="h-5 w-5" />
+					Customers
+				</>
+			),
+		},
+		{
+			href: "#",
+			className:
+				"flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground",
+			children: (
+				<>
+					<LineChart className="h-5 w-5" />
+					Settings
+				</>
+			),
+		},
+	];
 	return (
 		<div className="flex min-h-screen w-full flex-col bg-muted/40">
 			<SideBar />
@@ -413,48 +480,13 @@ export default function Page() {
 						</SheetTrigger>
 						<SheetContent side="left" className="sm:max-w-xs">
 							<nav className="grid gap-6 text-lg font-medium">
-								<Link
-									href="#"
-									className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
-								>
-									<Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-									<span className="sr-only">Acme Inc</span>
-								</Link>
-								<Link
-									href="#"
-									className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-								>
-									<Home className="h-5 w-5" />
-									Dashboard
-								</Link>
-								<Link
-									href="#"
-									className="flex items-center gap-4 px-2.5 text-foreground"
-								>
-									<ShoppingCart className="h-5 w-5" />
-									Orders
-								</Link>
-								<Link
-									href="#"
-									className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-								>
-									<Package className="h-5 w-5" />
-									Products
-								</Link>
-								<Link
-									href="#"
-									className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-								>
-									<Users2 className="h-5 w-5" />
-									Customers
-								</Link>
-								<Link
-									href="#"
-									className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-								>
-									<LineChart className="h-5 w-5" />
-									Settings
-								</Link>
+								{linksConfig.map((link, index) => (
+									<NavLink
+										href={link.href}
+										className={link.className}
+										children={link.children}
+									/>
+								))}
 							</nav>
 						</SheetContent>
 					</Sheet>
