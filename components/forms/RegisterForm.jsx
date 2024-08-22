@@ -1,7 +1,7 @@
 "use client";
 import useRegister from "@/hooks/use-register";
 import Form from "./Form";
-import Link from "next/link";
+import { continueWithGoogle } from "@/utils";
 
 function RegisterForm() {
 	const { email, password, isLoading, onChange, onSubmit } = useRegister();
@@ -25,6 +25,7 @@ function RegisterForm() {
 
 	const social = {
 		socialtext: "Sign up with Google",
+		onClick: continueWithGoogle,
 	};
 
 	return (

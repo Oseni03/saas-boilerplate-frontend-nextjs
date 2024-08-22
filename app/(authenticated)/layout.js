@@ -1,4 +1,4 @@
-import RequireAuth from "@/components/utils/requireAuth";
+import RequireAuth from "@/components/utils/RequireAuth";
 
 export const metadata = {
 	title: "Next.js",
