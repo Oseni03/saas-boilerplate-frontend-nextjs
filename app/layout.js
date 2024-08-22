@@ -18,10 +18,8 @@ export default function RootLayout({ children }) {
 			<body className={inter.className}>
 				<Provider>
 					<Setup />
-					<Header />
 					<div>{children}</div>
 					{/* className="mx-auto max-w-xl px-2 sm:px-6 lg:px-8 py-8" */}
-					<Footer />
 				</Provider>
 			</body>
 		</html>
