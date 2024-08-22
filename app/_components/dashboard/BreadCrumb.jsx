@@ -9,25 +9,28 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 
-function BreadCrumb() {
+function BreadCrumb({ config }) {
 	return (
 		<Breadcrumb className="hidden md:flex">
 			<BreadcrumbList>
-				<BreadcrumbItem>
-					<BreadcrumbLink asChild>
-						<Link href="#">Dashboard</Link>
-					</BreadcrumbLink>
-				</BreadcrumbItem>
-				<BreadcrumbSeparator />
-				<BreadcrumbItem>
-					<BreadcrumbLink asChild>
-						<Link href="#">Orders</Link>
-					</BreadcrumbLink>
-				</BreadcrumbItem>
-				<BreadcrumbSeparator />
-				<BreadcrumbItem>
-					<BreadcrumbPage>Recent Orders</BreadcrumbPage>
-				</BreadcrumbItem>
+				{config.map((item, index) =>
+					item.href ? (
+						<>
+							<BreadcrumbItem key={index}>
+								<BreadcrumbLink asChild>
+									<Link href={item.href}>
+										{item.labelText}
+									</Link>
+								</BreadcrumbLink>
+							</BreadcrumbItem>
+							<BreadcrumbSeparator key={index} />
+						</>
+					) : (
+						<BreadcrumbItem key={index}>
+							<BreadcrumbPage>{item.labelText}</BreadcrumbPage>
+						</BreadcrumbItem>
+					)
+				)}
 			</BreadcrumbList>
 		</Breadcrumb>
 	);

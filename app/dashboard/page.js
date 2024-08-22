@@ -462,6 +462,20 @@ export default function Page() {
 			),
 		},
 	];
+
+	const breadcrumbConfig = [
+		{
+			href: "#",
+			labelText: "Dashboard",
+		},
+		{
+			href: "#",
+			labelText: "Orders",
+		},
+		{
+			labelText: "Recent Orders",
+		},
+	];
 	return (
 		<div className="flex min-h-screen w-full flex-col bg-muted/40">
 			<SideBar />
@@ -490,7 +504,7 @@ export default function Page() {
 							</nav>
 						</SheetContent>
 					</Sheet>
-					<BreadCrumb />
+					<BreadCrumb config={breadcrumbConfig} />
 					<div className="relative ml-auto flex-1 md:grow-0">
 						<Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
 						<Input
