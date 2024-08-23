@@ -1,8 +1,7 @@
 "use client";
 import Form from "./Form";
 import useLogin from "@/hooks/use-login";
-import Link from "next/link";
-import Image from "next/image";
+import { continueWithGoogle } from "@/utils";
 
 function LoginForm() {
 	const { email, password, isLoading, onChange, onSubmit } = useLogin();
@@ -30,6 +29,7 @@ function LoginForm() {
 
 	const social = {
 		socialtext: "Login with Google",
+		onclick: continueWithGoogle,
 	};
 
 	return (
