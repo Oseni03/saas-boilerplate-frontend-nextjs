@@ -2,6 +2,7 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "../ui/textarea";
 
 function MyInput({
 	labelId,
@@ -11,6 +12,7 @@ function MyInput({
 	children,
 	required = false,
 	link,
+	rows,
 }) {
 	return (
 		<div className="grid gap-2">
@@ -25,15 +27,19 @@ function MyInput({
 					</Link>
 				)}
 			</div>
-			<Input
-				type={type}
-				name={labelId}
-				id={labelId}
-				// placeholder="name@company.com"
-				value={value}
-				onChange={onChange}
-				required={required}
-			/>
+			{rows ? (
+				<Textarea name={labelId} rows={rows} />
+			) : (
+				<Input
+					type={type}
+					name={labelId}
+					id={labelId}
+					// placeholder="name@company.com"
+					value={value}
+					onChange={onChange}
+					required={required}
+				/>
+			)}
 		</div>
 	);
 }

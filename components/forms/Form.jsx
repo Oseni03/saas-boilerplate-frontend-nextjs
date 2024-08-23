@@ -16,6 +16,7 @@ function Form({ config, social, isLoading, btnText, onChange, onSubmit }) {
 						value={input.value}
 						required={input.required}
 						link={input.link}
+						rows={input.rows}
 					>
 						{input.labelText}
 					</Input>
