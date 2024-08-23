@@ -1,4 +1,6 @@
 import RequireAuth from "@/components/utils/RequireAuth";
+import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import SideBar from "@/components/dashboard/SideBar";
 
 export const metadata = {
 	title: "Next.js",
@@ -6,5 +8,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-	return <RequireAuth>{children}</RequireAuth>;
+	return (
+		<RequireAuth>
+			<div className="flex min-h-screen w-full flex-col bg-muted/40">
+				<SideBar />
+				<div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+					<DashboardHeader />
+					{children}
+				</div>
+			</div>
+		</RequireAuth>
+	);
 }

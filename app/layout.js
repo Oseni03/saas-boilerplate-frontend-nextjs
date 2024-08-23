@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
 	const className = [cn("h-full", inter.className)];
 	return (
 		<html lang="en" className="min-h-max h-full">
-			<body className={className}>
+			<body className={inter.className}>
 				<Provider>
 					<Setup />
 					<div>{children}</div>
