@@ -10,9 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<RequireAuth>
-			<div className="flex min-h-screen w-full flex-col bg-muted/40">
+			<div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
 				<SideBar />
-				<div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+				<div className="flex flex-col sm:gap-4">
 					<DashboardHeader />
 					{children}
 				</div>

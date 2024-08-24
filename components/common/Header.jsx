@@ -1,21 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { useLogoutMutation } from "@/redux/features/authApiSlice";
 import { logout as setLogout } from "@/redux/features/authSlice";
-import NavLink from "./NavLink";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavigationLinks from "./NavigationLinks";
-import NavigationSidebarPanel from "./NavigationSidebarPanel";
+import NavLink from "./NavLink";
 import Link from "next/link";
+import NavigationSidebarPanel from "./NavigationSidebarPanel";
 
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const router = useRouter();
-	const pathname = usePathname();
 	const dispatch = useAppDispatch();
 
 	const [logout] = useLogoutMutation();
@@ -28,8 +27,6 @@ export default function Header() {
 				dispatch(setLogout());
 			});
 	};
-
-	// const isSelected = (path) => (pathname === path ? true : false);
 
 	const guestButtons = () => (
 		<>

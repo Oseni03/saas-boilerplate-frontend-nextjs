@@ -84,7 +84,7 @@ function NavLink({ isSelected, href, children, ...props }, ref) {
 
 	return (
 		<Link
-			className={className}
+			className={props.className}
 			href={href}
 			aria-current={isSelected ? "page" : "none"}
 		>
