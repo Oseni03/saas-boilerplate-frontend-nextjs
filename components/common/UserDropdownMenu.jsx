@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
 import { CircleUser } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
+import { useAppDispatch } from "@/redux/hooks";
+import { useRouter } from "next/navigation";
+import { logout as setLogout } from "@/redux/features/authSlice";
+import { useLogoutMutation } from "@/redux/features/authApiSlice";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -12,6 +16,18 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 function UserDropdownMenu() {
+	const dispatch = useAppDispatch();
+	const router = useRouter();
+	const [logout] = useLogoutMutation();
+
+	const handleLogout = () => {
+		logout()
+			.unwrap()
+			.then(() => {
+				dispatch(setLogout());
+				router.replace("/");
+			});
+	};
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild className="ms-auto">
@@ -28,9 +44,11 @@ function UserDropdownMenu() {
 				<DropdownMenuLabel>My Account</DropdownMenuLabel>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem>Settings</DropdownMenuItem>
-				<DropdownMenuItem>Support</DropdownMenuItem>
+				<DropdownMenuItem>Dashboard</DropdownMenuItem>
 				<DropdownMenuSeparator />
-				<DropdownMenuItem>Logout</DropdownMenuItem>
+				<DropdownMenuItem onSelect={handleLogout}>
+					Logout
+				</DropdownMenuItem>
 			</DropdownMenuContent>
 		</DropdownMenu>
 	);

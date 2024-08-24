@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useAppSelector, useAppDispatch } from "@/redux/hooks";
-import { useLogoutMutation } from "@/redux/features/authApiSlice";
-import { logout as setLogout } from "@/redux/features/authSlice";
+import { useAppSelector } from "@/redux/hooks";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavigationLinks from "./NavigationLinks";
@@ -16,31 +14,14 @@ import UserDropdownMenu from "./UserDropdownMenu";
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const router = useRouter();
-	const dispatch = useAppDispatch();
 
-	const [logout] = useLogoutMutation();
 	const { isAuthenticated } = useAppSelector((state) => state.auth);
-
-	const handleLogout = () => {
-		logout()
-			.unwrap()
-			.then(() => {
-				dispatch(setLogout());
-			});
-	};
 
 	const guestButtons = () => (
 		<>
 			<NavLink onClick={() => router.push("/auth/register")}>
 				Get started
 			</NavLink>
-		</>
-	);
-
-	const authButtons = () => (
-		<>
-			<NavLink>Logout</NavLink>
-			{/* onClick={handleLogout()} */}
 		</>
 	);
 
