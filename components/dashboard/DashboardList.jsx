@@ -55,7 +55,7 @@ function DashboardList() {
 									className="h-8 gap-1"
 								>
 									<ListFilter className="h-3.5 w-3.5" />
-									<span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
+									<span className="sr-only lg:not-sr-only lg:whitespace-nowrap">
 										Filter
 									</span>
 								</Button>
@@ -80,7 +80,7 @@ function DashboardList() {
 							className="h-8 gap-1"
 						>
 							<File className="h-3.5 w-3.5" />
-							<span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
+							<span className="sr-only md:not-sr-only md:whitespace-nowrap">
 								Export
 							</span>
 						</Button>
@@ -115,10 +115,10 @@ function DashboardList() {
 										<TableHead className="hidden md:table-cell">
 											Price
 										</TableHead>
-										<TableHead className="hidden md:table-cell">
+										<TableHead className="hidden lg:table-cell">
 											Total Sales
 										</TableHead>
-										<TableHead className="hidden md:table-cell">
+										<TableHead className="hidden lg:table-cell">
 											Created at
 										</TableHead>
 										<TableHead>
@@ -150,10 +150,10 @@ function DashboardList() {
 										<TableCell className="hidden md:table-cell">
 											$499.99
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											25
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											2023-07-12 10:42 AM
 										</TableCell>
 										<TableCell>
@@ -205,10 +205,10 @@ function DashboardList() {
 										<TableCell className="hidden md:table-cell">
 											$129.99
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											100
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											2023-10-18 03:21 PM
 										</TableCell>
 										<TableCell>
@@ -260,10 +260,10 @@ function DashboardList() {
 										<TableCell className="hidden md:table-cell">
 											$39.99
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											50
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											2023-11-29 08:15 AM
 										</TableCell>
 										<TableCell>
@@ -315,10 +315,10 @@ function DashboardList() {
 										<TableCell className="hidden md:table-cell">
 											$2.99
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											0
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											2023-12-25 11:59 PM
 										</TableCell>
 										<TableCell>
@@ -370,10 +370,10 @@ function DashboardList() {
 										<TableCell className="hidden md:table-cell">
 											$59.99
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											75
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											2024-01-01 12:00 AM
 										</TableCell>
 										<TableCell>
@@ -425,10 +425,10 @@ function DashboardList() {
 										<TableCell className="hidden md:table-cell">
 											$199.99
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											30
 										</TableCell>
-										<TableCell className="hidden md:table-cell">
+										<TableCell className="hidden lg:table-cell">
 											2024-02-14 02:14 PM
 										</TableCell>
 										<TableCell>
