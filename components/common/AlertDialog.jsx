@@ -11,26 +11,25 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-export function AlertDialogDemo() {
+export function MyAlertDialog(
+	{ dialogTitle, dialogDescription, children, ...props },
+	ref
+) {
 	return (
-		<AlertDialog>
-			<AlertDialogTrigger asChild>
-				<Button variant="outline">Show Dialog</Button>
-			</AlertDialogTrigger>
+		<AlertDialog ref={ref}>
+			<AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
 			<AlertDialogContent>
 				<AlertDialogHeader>
-					<AlertDialogTitle>
-						Are you absolutely sure?
-					</AlertDialogTitle>
+					<AlertDialogTitle>{dialogTitle}</AlertDialogTitle>
 					<AlertDialogDescription>
-						This action cannot be undone. This will permanently
-						delete your account and remove your data from our
-						servers.
+						{dialogDescription}
 					</AlertDialogDescription>
 				</AlertDialogHeader>
 				<AlertDialogFooter>
 					<AlertDialogCancel>Cancel</AlertDialogCancel>
-					<AlertDialogAction>Continue</AlertDialogAction>
+					<AlertDialogAction onClick={props.onClick}>
+						Continue
+					</AlertDialogAction>
 				</AlertDialogFooter>
 			</AlertDialogContent>
 		</AlertDialog>
