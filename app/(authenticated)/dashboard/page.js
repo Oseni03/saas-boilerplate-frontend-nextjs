@@ -1,8 +1,8 @@
-import DashboardList from "@/components/dashboard/DashboardList";
+import DashboardTable from "@/components/dashboard/DashboardTable";
 import React from "react";
 
 function Page() {
-	return <DashboardList />;
+	return <DashboardTable />;
 }
 
 export default Page;

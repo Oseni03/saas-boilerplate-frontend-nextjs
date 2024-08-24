@@ -1,4 +1,4 @@
-import MyTable from "./Table";
+import MyTable from "../common/Table";
 import { Badge } from "@/components/ui/badge";
 
 import React from "react";

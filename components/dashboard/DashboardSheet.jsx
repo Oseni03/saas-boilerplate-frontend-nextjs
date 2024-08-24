@@ -15,7 +15,7 @@ import {
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import UpgradeCard from "./UpgradeCard";
+import UpgradeCard from "../common/UpgradeCard";
 
 function DashboardSheet() {
 	const pathname = usePathname();

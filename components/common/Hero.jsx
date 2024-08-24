@@ -6,7 +6,7 @@ function Hero() {
 	return (
 		<section className="bg-white dark:bg-gray-900">
 			<div className="py-14 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12">
-				<a
+				<Link
 					href="#"
 					className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
 					role="alert"
@@ -29,7 +29,7 @@ function Hero() {
 							clipRule="evenodd"
 						></path>
 					</svg>
-				</a>
+				</Link>
 				<h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
 					We invest in the world’s potential
 				</h1>
@@ -39,7 +39,7 @@ function Hero() {
 					economic growth.
 				</p>
 				<div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-					<a
+					<Link
 						href="#"
 						className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary focus:ring-4"
 					>
@@ -56,8 +56,8 @@ function Hero() {
 								clipRule="evenodd"
 							></path>
 						</svg>
-					</a>
-					<a
+					</Link>
+					<Link
 						href="#"
 						className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
 					>
@@ -70,14 +70,14 @@ function Hero() {
 							<path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
 						</svg>
 						Watch video
-					</a>
+					</Link>
 				</div>
 				<div className="px-4 pt-6 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
 					<span className="font-semibold text-gray-400 uppercase">
 						FEATURED IN
 					</span>
 					<div className="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between">
-						<a
+						<Link
 							href="#"
 							className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
 						>
@@ -124,8 +124,8 @@ function Hero() {
 									fill="currentColor"
 								/>
 							</svg>
-						</a>
-						<a
+						</Link>
+						<Link
 							href="#"
 							className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
 						>
@@ -148,8 +148,8 @@ function Hero() {
 									fill="currentColor"
 								/>
 							</svg>
-						</a>
-						<a
+						</Link>
+						<Link
 							href="#"
 							className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
 						>
@@ -176,7 +176,7 @@ function Hero() {
 									fill="currentColor"
 								/>
 							</svg>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

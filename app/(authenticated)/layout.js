@@ -1,6 +1,6 @@
 import RequireAuth from "@/components/utils/RequireAuth";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import SideBar from "@/components/dashboard/SideBar";
+import SideBar from "@/components/common/SideBar";
 
 export const metadata = {
 	title: "Next.js",

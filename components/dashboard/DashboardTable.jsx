@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-function DashboardList() {
+function DashboardTable() {
 	return (
 		<main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
 			<Tabs defaultValue="all">
@@ -475,4 +475,4 @@ function DashboardList() {
 	);
 }
 
-export default DashboardList;
+export default DashboardTable;

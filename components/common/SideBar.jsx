@@ -9,7 +9,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import DashboardNavLinks from "./DashboardNavLinks";
+import DashboardNavLinks from "@/components/dashboard/DashboardNavLinks";
 
 function SideBar() {
 	return (

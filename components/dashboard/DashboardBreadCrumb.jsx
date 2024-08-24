@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "./BreadCrumb";
+import BreadCrumb from "../common/BreadCrumb";
 
 function DashboardBreadCrumb() {
 	const breadcrumbConfig = [
