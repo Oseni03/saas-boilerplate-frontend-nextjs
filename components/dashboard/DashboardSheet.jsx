@@ -3,19 +3,11 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import NavLink from "../common/NavLink";
-import {
-	Home,
-	LineChart,
-	Menu,
-	Package,
-	Package2,
-	ShoppingCart,
-	Users,
-} from "lucide-react";
-import { Badge } from "../ui/badge";
+import { Menu, Package2 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import UpgradeCard from "../common/UpgradeCard";
+import NavConfig from "../common/NavConfig";
 
 function DashboardSheet() {
 	const pathname = usePathname();
@@ -26,57 +18,7 @@ function DashboardSheet() {
 	const notSelectedClassName =
 		"mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground";
 
-	const linksConfig = [
-		{
-			href: "/dashboard",
-			children: (
-				<>
-					<Home className={iconClassName} />
-					Dashboard
-				</>
-			),
-		},
-		{
-			href: "#",
-			children: (
-				<>
-					<ShoppingCart className={iconClassName} />
-					Orders
-					<Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-						6
-					</Badge>
-				</>
-			),
-		},
-		{
-			href: "/products",
-			children: (
-				<>
-					<Package className={iconClassName} />
-					Products{" "}
-				</>
-			),
-		},
-		{
-			href: "/customers",
-			children: (
-				<>
-					<Users className={iconClassName} />
-					Customers
-				</>
-			),
-		},
-		{
-			href: "/analytics",
-			children: (
-				<>
-					<LineChart className={iconClassName} />
-					Analytics
-				</>
-			),
-		},
-	];
-
+	const linksConfig = NavConfig(iconClassName);
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
