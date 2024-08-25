@@ -3,7 +3,6 @@ import React from "react";
 import { CircleUser } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAppDispatch } from "@/redux/hooks";
-import { useRouter } from "next/navigation";
 import { logout as setLogout } from "@/redux/features/authSlice";
 import { useLogoutMutation } from "@/redux/features/authApiSlice";
 import {
@@ -17,7 +16,6 @@ import {
 
 function UserDropdownMenu() {
 	const dispatch = useAppDispatch();
-	const router = useRouter();
 	const [logout] = useLogoutMutation();
 
 	const handleLogout = () => {
@@ -25,7 +23,6 @@ function UserDropdownMenu() {
 			.unwrap()
 			.then(() => {
 				dispatch(setLogout());
-				router.replace("/");
 			});
 	};
 	return (
