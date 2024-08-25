@@ -29,7 +29,7 @@ function LoginForm() {
 
 	const social = {
 		socialtext: "Login with Google",
-		onclick: continueWithGoogle,
+		onClick: continueWithGoogle,
 	};
 
 	return (

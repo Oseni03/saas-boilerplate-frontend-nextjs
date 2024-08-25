@@ -20,7 +20,6 @@ function RequireAuth({ children }) {
 	}
 
 	if (!isAuthenticated) {
-		toast.error("Must be logged in");
 		router.push("/auth/login");
 	}
 

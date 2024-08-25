@@ -1,9 +1,18 @@
-import React from 'react'
+"use client";
+
+import Spinner from "@/components/common/Spinner";
+import useSocialAuth from "@/hooks/use-social-auth";
+import { useSocialAuthenticateMutation } from "@/redux/features/authApiSlice";
 
 function Page() {
-  return (
-    <div>Google</div>
-  )
+	const [googleAuthenticate] = useSocialAuthenticateMutation();
+	useSocialAuth(googleAuthenticate, "google-oauth2");
+
+	return (
+		<div className="h-screen">
+			<Spinner />
+		</div>
+	);
 }
 
-export default Page
+export default Page;
