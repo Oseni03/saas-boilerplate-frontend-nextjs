@@ -84,6 +84,12 @@ const authApiSlice = apiSlice.injectEndpoints({
 				body: { old_password, new_password },
 			}),
 		}),
+		deactivateAccount: builder.mutation({
+			query: () => ({
+				url: `/users/me/`,
+				method: "DELETE",
+			}),
+		}),
 	}),
 });
 
@@ -100,4 +106,5 @@ export const {
 	useResetPasswordConfirmMutation,
 	useUpdateProfileMutation,
 	useChangeUserPasswordMutation,
+	useDeactivateAccountMutation,
 } = authApiSlice;

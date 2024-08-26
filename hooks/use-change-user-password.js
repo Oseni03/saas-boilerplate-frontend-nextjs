@@ -23,8 +23,6 @@ function useChangeUserPassword() {
 	const onSubmit = (event) => {
 		event.preventDefault();
 
-		console.log(old_password, new_password);
-
 		changePassword({ old_password, new_password })
 			.unwrap()
 			.then(() => {

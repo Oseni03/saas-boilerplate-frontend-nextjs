@@ -9,7 +9,6 @@ import {
 	AlertDialogTitle,
 	AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
 
 export function MyAlertDialog(
 	{ dialogTitle, dialogDescription, children, ...props },
@@ -27,7 +26,10 @@ export function MyAlertDialog(
 				</AlertDialogHeader>
 				<AlertDialogFooter>
 					<AlertDialogCancel>Cancel</AlertDialogCancel>
-					<AlertDialogAction onClick={props.onClick}>
+					<AlertDialogAction
+						onClick={props.onClick}
+						className={props.ButtonClassName}
+					>
 						Continue
 					</AlertDialogAction>
 				</AlertDialogFooter>
