@@ -1,10 +1,14 @@
-import { Bird, Rabbit, Settings, Share, Turtle } from "lucide-react";
-
+import { Share } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ModelConfigurationForm from "@/components/forms/ModelConfigurationForm";
 import PlaygroundChatForm from "@/components/forms/PlaygroundChatForm";
 import PlaygroundModelConfigDrawer from "@/components/playground/PlaygroundModelConfigDrawer";
+
+export const metadata = {
+	title: "Playground - Boilerplate",
+	description: "Boilerplate playground page",
+};
 
 export default function Page() {
 	return (

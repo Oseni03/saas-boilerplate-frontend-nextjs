@@ -18,6 +18,11 @@ import {
 } from "@/components/ui/card";
 import TransactionsTable from "@/components/tables/TransactionsTable";
 
+export const metadata = {
+	title: "Analytics - Boilerplate",
+	description: "Boilerplate analytics page",
+};
+
 function Page() {
 	return (
 		<main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 lg:p-8">

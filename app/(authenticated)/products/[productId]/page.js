@@ -34,6 +34,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "react-toastify";
 import { MyAlertDialog } from "@/components/common/AlertDialog";
 
+export const metadata = {
+	title: "Product detail - Boilerplate",
+	description: "Boilerplate product detail page",
+};
+
 function Page({ params }) {
 	const { productId } = params;
 	console.log(productId);
