@@ -1,7 +1,95 @@
-import Link from "next/link";
 import React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import PricingCard from "./PricingCard";
 
 const Pricing = () => {
+	const monthlyConfig = [
+		{
+			priceTitle: "Starter",
+			priceDescription: "Relevant for one user.",
+			price: "$19",
+			interval: "month",
+			features: [
+				"Individual configuration",
+				"No setup, or hidden fees",
+				"Team size: 5 developers",
+				"Premium support: 12 months",
+				"Free updates: 12 months",
+			],
+		},
+		{
+			priceTitle: "Company",
+			priceDescription:
+				"Relevant for multiple users, extended & premium support",
+			price: "$99",
+			interval: "month",
+			features: [
+				"Individual configuration",
+				"No setup, or hidden fees",
+				"Team size: 10 developers",
+				"Premium support: 24 months",
+				"Free updates: 24 months",
+			],
+		},
+		{
+			priceTitle: "Enterprise",
+			priceDescription:
+				"Best for large scale uses and extended redistribution rights.",
+			price: "$499",
+			interval: "month",
+			features: [
+				"Individual configuration",
+				"No setup, or hidden fees",
+				"Team size: 100+ developers",
+				"Premium support: 36 months",
+				"Free updates: 36 months",
+			],
+		},
+	];
+
+	const yearlyConfig = [
+		{
+			priceTitle: "Starter",
+			priceDescription: "Relevant for one user.",
+			price: "$190",
+			interval: "year",
+			features: [
+				"Individual configuration",
+				"No setup, or hidden fees",
+				"Team size: 5 developers",
+				"Premium support: 12 months",
+				"Free updates: 12 months",
+			],
+		},
+		{
+			priceTitle: "Company",
+			priceDescription:
+				"Relevant for multiple users, extended & premium support",
+			price: "$990",
+			interval: "year",
+			features: [
+				"Individual configuration",
+				"No setup, or hidden fees",
+				"Team size: 10 developers",
+				"Premium support: 24 months",
+				"Free updates: 24 months",
+			],
+		},
+		{
+			priceTitle: "Enterprise",
+			priceDescription:
+				"Best for large scale uses and extended redistribution rights.",
+			price: "$4990",
+			interval: "year",
+			features: [
+				"Individual configuration",
+				"No setup, or hidden fees",
+				"Team size: 100+ developers",
+				"Premium support: 36 months",
+				"Free updates: 36 months",
+			],
+		},
+	];
 	return (
 		<section className="bg-white dark:bg-gray-900">
 			<div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -15,374 +103,46 @@ const Pricing = () => {
 						drive economic growth.
 					</p>
 				</div>
-				<div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-					{/* Pricing Card */}
-					<div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-						<h3 className="mb-4 text-2xl font-semibold">Starter</h3>
-						<p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-							Best option for personal use & for your next
-							project.
-						</p>
-						<div className="flex justify-center items-baseline my-8">
-							<span className="mr-2 text-5xl font-extrabold">
-								$29
-							</span>
-							<span className="text-gray-500 dark:text-gray-400">
-								/month
-							</span>
-						</div>
-						{/* List */}
-						<ul role="list" className="mb-8 space-y-4 text-left">
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>Individual configuration</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>No setup, or hidden fees</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>
-									Team size:{" "}
-									<span className="font-semibold">
-										1 developer
-									</span>
-								</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>
-									Premium support:{" "}
-									<span className="font-semibold">
-										6 months
-									</span>
-								</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>
-									Free updates:{" "}
-									<span className="font-semibold">
-										6 months
-									</span>
-								</span>
-							</li>
-						</ul>
-						<Link
-							href="#"
-							className="text-white bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary"
-						>
-							Get started
-						</Link>
+				<Tabs defaultValue="monthly">
+					<div className="flex items-center justify-center my-5">
+						<TabsList>
+							<TabsTrigger value="monthly">Monthly</TabsTrigger>
+							<TabsTrigger value="yearly">Yearly</TabsTrigger>
+						</TabsList>
 					</div>
-
-					{/* Pricing Card */}
-					<div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-						<h3 className="mb-4 text-2xl font-semibold">Company</h3>
-						<p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-							Relevant for multiple users, extended & premium
-							support.
-						</p>
-						<div className="flex justify-center items-baseline my-8">
-							<span className="mr-2 text-5xl font-extrabold">
-								$99
-							</span>
-							<span className="text-gray-500 dark:text-gray-400">
-								/month
-							</span>
+					<TabsContent value="monthly">
+						<div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+							{/* Pricing Card */}
+							{monthlyConfig.map((item) => (
+								<PricingCard
+									key={item.price}
+									description={item.priceDescription}
+									price={item.price}
+									interval={item.interval}
+									features={item.features}
+								>
+									{item.priceTitle}
+								</PricingCard>
+							))}
 						</div>
-						{/* List */}
-						<ul role="list" className="mb-8 space-y-4 text-left">
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
+					</TabsContent>
+					<TabsContent value="yearly">
+						<div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+							{/* Pricing Card */}
+							{yearlyConfig.map((item) => (
+								<PricingCard
+									key={item.price}
+									description={item.priceDescription}
+									price={item.price}
+									interval={item.interval}
+									features={item.features}
 								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>Individual configuration</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 
-
-011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>No setup, or hidden fees</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>
-									Team size:{" "}
-									<span className="font-semibold">
-										10 developers
-									</span>
-								</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>
-									Premium support:{" "}
-									<span className="font-semibold">
-										24 months
-									</span>
-								</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>
-									Free updates:{" "}
-									<span className="font-semibold">
-										24 months
-									</span>
-								</span>
-							</li>
-						</ul>
-						<Link
-							href="#"
-							className="text-white bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary"
-						>
-							Get started
-						</Link>
-					</div>
-
-					{/* Pricing Card */}
-					<div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-						<h3 className="mb-4 text-2xl font-semibold">
-							Enterprise
-						</h3>
-						<p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-							Best for large scale uses and extended
-							redistribution rights.
-						</p>
-						<div className="flex justify-center items-baseline my-8">
-							<span className="mr-2 text-5xl font-extrabold">
-								$499
-							</span>
-							<span className="text-gray-500 dark:text-gray-400">
-								/month
-							</span>
+									{item.priceTitle}
+								</PricingCard>
+							))}
 						</div>
-						{/* List */}
-						<ul role="list" className="mb-8 space-y-4 text-left">
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>Individual configuration</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>No setup, or hidden fees</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>
-									Team size:{" "}
-									<span className="font-semibold">
-										100+ developers
-									</span>
-								</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>
-									Premium support:{" "}
-									<span className="font-semibold">
-										36 months
-									</span>
-								</span>
-							</li>
-							<li className="flex items-center space-x-3">
-								{/* Icon */}
-								<svg
-									className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-									fill="currentColor"
-									viewBox="0 0 20 20"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										fillRule="evenodd"
-										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-										clipRule="evenodd"
-									></path>
-								</svg>
-								<span>
-									Free updates:{" "}
-									<span className="font-semibold">
-										36 months
-									</span>
-								</span>
-							</li>
-						</ul>
-						<Link
-							href="#"
-							className="text-white bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary"
-						>
-							Get started
-						</Link>
-					</div>
-				</div>
+					</TabsContent>
+				</Tabs>
 			</div>
 		</section>
 	);
