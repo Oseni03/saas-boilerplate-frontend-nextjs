@@ -1,9 +1,5 @@
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "../ui/button";
 import { useAppSelector } from "@/redux/hooks";
 import useProfileUpdate from "@/hooks/use-profile-update";
-import Spinner from "../common/Spinner";
 import Form from "./Form";
 
 function ProfileUpdateForm() {

@@ -1,31 +1,21 @@
 "use client";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ChevronLeft, PlusCircle, Upload } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
 	CardDescription,
-	CardFooter,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { toast } from "react-toastify";
 import ProfileUpdateForm from "@/components/forms/ProfileUpdateForm";
 import NotificationPreferenceForm from "@/components/forms/NotificationPreferenceForm";
+import ChangeUserPasswordForm from "@/components/forms/ChangeUserPasswordForm";
 
-function Page({ params }) {
-	const { productId } = params;
-	console.log(productId);
+function Page() {
 	const router = useRouter();
-
-	const handleSubmit = () => {
-		router.back();
-		toast.success("Form submitted successfully");
-	};
 	return (
 		<main className="grid flex-1 mb-6 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
 			<div className="mx-auto grid w-full xl:max-w-[59rem] flex-1 auto-rows-max gap-4">
@@ -66,6 +56,18 @@ function Page({ params }) {
 							</CardHeader>
 							<CardContent>
 								<NotificationPreferenceForm />
+							</CardContent>
+						</Card>
+						<Card x-chunk="dashboard-07-chunk-1">
+							<CardHeader>
+								<CardTitle>Change Password</CardTitle>
+								<CardDescription>
+									Lipsum dolor sit amet, consectetur
+									adipiscing elit
+								</CardDescription>
+							</CardHeader>
+							<CardContent>
+								<ChangeUserPasswordForm />
 							</CardContent>
 						</Card>
 					</div>
