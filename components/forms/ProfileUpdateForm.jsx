@@ -2,56 +2,67 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "../ui/button";
 import { useAppSelector } from "@/redux/hooks";
+import useProfileUpdate from "@/hooks/use-profile-update";
+import Spinner from "../common/Spinner";
+import Form from "./Form";
 
 function ProfileUpdateForm() {
 	const user = useAppSelector((state) => state.user.user);
 	console.log(user);
 
+	const {
+		first_name,
+		last_name,
+		phone_number,
+		isLoading,
+		onChange,
+		onSubmit,
+	} = useProfileUpdate(user);
+
+	const config = [
+		{
+			labelText: "Your email",
+			labelId: "email",
+			type: "text",
+			required: false,
+			defaultValue: user?.email,
+			disabled: true,
+		},
+		{
+			labelText: "First name",
+			labelId: "first_name",
+			type: "text",
+			value: first_name,
+			required: false,
+			defaultValue: user?.first_name,
+		},
+		{
+			labelText: "Last name",
+			labelId: "last_name",
+			type: "text",
+			value: last_name,
+			required: false,
+			defaultValue: user?.last_name,
+		},
+		{
+			labelText: "Phone number",
+			labelId: "phone_number",
+			type: "text",
+			value: phone_number,
+			required: false,
+			defaultValue: user?.phone_number,
+		},
+	];
+
 	return (
-		<form>
-			<div className="grid gap-6">
-				<div className="grid gap-3">
-					<Label htmlFor="email">Email</Label>
-					<Input
-						id="email"
-						type="text"
-						className="w-full"
-						defaultValue={user?.email}
-						disabled
-					/>
-				</div>
-				<div className="grid gap-3">
-					<Label htmlFor="first_name">First name</Label>
-					<Input
-						id="first_name"
-						type="text"
-						className="w-full"
-						defaultValue={user?.first_name}
-					/>
-				</div>
-				<div className="grid gap-3">
-					<Label htmlFor="last_name">Last name</Label>
-					<Input
-						id="last_name"
-						type="text"
-						className="w-full"
-						defaultValue={user?.last_name}
-					/>
-				</div>
-				<div className="grid gap-3">
-					<Label htmlFor="phone_number">Phone number</Label>
-					<Input
-						id="phone_number"
-						type="text"
-						className="w-full"
-						defaultValue={user?.phone_number}
-					/>
-				</div>
-				<div className="flex justify-end">
-					<Button>Update</Button>
-				</div>
-			</div>
-		</form>
+		<Form
+			config={config}
+			isLoading={isLoading}
+			btnText="Update"
+			btnClassName="justify-end"
+			onChange={onChange}
+			onSubmit={onSubmit}
+		/>
 	);
 }
 

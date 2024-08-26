@@ -46,7 +46,13 @@ function UserDropdownMenu() {
 			<DropdownMenuContent align="end">
 				<DropdownMenuLabel>My Account</DropdownMenuLabel>
 				<DropdownMenuSeparator />
-				<DropdownMenuItem>Settings</DropdownMenuItem>
+				<DropdownMenuItem
+					onSelect={() => {
+						router.push("/settings");
+					}}
+				>
+					Settings
+				</DropdownMenuItem>
 				<DropdownMenuItem
 					onSelect={() => {
 						router.push("/dashboard");

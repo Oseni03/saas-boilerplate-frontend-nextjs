@@ -13,6 +13,8 @@ function MyInput({
 	required = false,
 	link,
 	rows,
+	defaultValue,
+	disabled = false,
 }) {
 	return (
 		<div className="grid gap-2">
@@ -38,6 +40,8 @@ function MyInput({
 					value={value}
 					onChange={onChange}
 					required={required}
+					defaultValue={defaultValue}
+					disabled={disabled}
 				/>
 			)}
 		</div>

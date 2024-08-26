@@ -3,7 +3,15 @@ import Input from "./Input";
 import Spinner from "../common/Spinner";
 import { Button } from "@/components/ui/button";
 
-function Form({ config, social, isLoading, btnText, onChange, onSubmit }) {
+function Form({
+	config,
+	social,
+	isLoading,
+	btnText,
+	btnClassName,
+	onChange,
+	onSubmit,
+}) {
 	return (
 		<>
 			<form className="space-y-4 md:space-y-6 mb-3" onSubmit={onSubmit}>
@@ -17,11 +25,17 @@ function Form({ config, social, isLoading, btnText, onChange, onSubmit }) {
 						required={input.required}
 						link={input.link}
 						rows={input.rows}
+						defaultValue={input.defaultValue}
+						disabled={input.disabled}
 					>
 						{input.labelText}
 					</Input>
 				))}
-				<Button type="submit" className="w-full" disabled={isLoading}>
+				<Button
+					type="submit"
+					className={btnClassName ? btnClassName : "w-full"}
+					disabled={isLoading}
+				>
 					{isLoading ? <Spinner /> : `${btnText}`}
 				</Button>
 			</form>
