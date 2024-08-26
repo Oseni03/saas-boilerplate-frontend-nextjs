@@ -1,3 +1,4 @@
+"use client";
 import { useAppSelector } from "@/redux/hooks";
 import useProfileUpdate from "@/hooks/use-profile-update";
 import Form from "./Form";

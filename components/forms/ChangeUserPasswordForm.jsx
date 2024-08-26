@@ -1,3 +1,4 @@
+"use client";
 import Form from "./Form";
 import useChangeUserPassword from "@/hooks/use-change-user-password";
 
