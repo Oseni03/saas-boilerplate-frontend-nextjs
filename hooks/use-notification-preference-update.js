@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useUpdateNotificationPreferenceMutation } from "@/redux/features/authApiSlice";
@@ -20,8 +21,7 @@ function useNotificationPreferenceUpdate(preference) {
 		sms_notification,
 	} = formData;
 
-	const onChange = (event) => {
-		const { name, value } = event.target;
+	const onChange = (name, value) => {
 		setFormData({ ...formData, [name]: value });
 	};
 

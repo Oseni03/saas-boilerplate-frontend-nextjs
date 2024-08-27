@@ -2,6 +2,7 @@ import ProfileUpdateCard from "@/components/settings/ProfileUpdateCard";
 import NotificationPreferenceCard from "@/components/settings/NotificationPreferenceCard";
 import ChangePasswordCard from "@/components/settings/ChangePasswordCard";
 import ArchiveAccountCard from "@/components/settings/ArchiveAccountCard";
+import SettingsHeader from "@/components/settings/SettingsHeader";
 
 export const metadata = {
 	title: "Account settings - Boilerplate",
@@ -14,6 +15,7 @@ function Page() {
 			<div className="mx-auto grid w-full xl:max-w-[59rem] flex-1 auto-rows-max gap-4">
 				<div className="grid gap-4">
 					<div className="grid auto-rows-max gap-4 lg:col-span-3 lg:gap-8">
+						<SettingsHeader />
 						<ProfileUpdateCard />
 						<NotificationPreferenceCard />
 						<ChangePasswordCard />
