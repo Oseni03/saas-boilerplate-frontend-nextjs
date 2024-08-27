@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { useUpdateNotificationPreferenceMutation } from "@/redux/features/authApiSlice";
+import { useUpdateNotificationPreferenceMutation } from "@/redux/features/settingsApiSlice";
 
 function useNotificationPreferenceUpdate(preference) {
 	const [updatePreference, { isLoading }] =

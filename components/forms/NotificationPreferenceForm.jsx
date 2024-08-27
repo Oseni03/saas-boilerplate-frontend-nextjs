@@ -11,7 +11,7 @@ import { Switch } from "@/components/ui/switch";
 import { Button } from "../ui/button";
 import Spinner from "../common/Spinner";
 import useNotificationPreferenceUpdate from "@/hooks/use-notification-preference-update";
-import { useRetrieveNotificationPreferenceQuery } from "@/redux/features/authApiSlice";
+import { useRetrieveNotificationPreferenceQuery } from "@/redux/features/settingsApiSlice";
 
 function NotificationPreferenceForm() {
 	const { data } = useRetrieveNotificationPreferenceQuery();

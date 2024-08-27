@@ -7,7 +7,7 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { MyAlertDialog } from "@/components/common/AlertDialog";
-import { useDeactivateAccountMutation } from "@/redux/features/authApiSlice";
+import { useDeactivateAccountMutation } from "@/redux/features/settingsApiSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { logout as setLogout } from "@/redux/features/authSlice";
 import { Button } from "@/components/ui/button";

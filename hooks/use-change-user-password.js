@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { useChangeUserPasswordMutation } from "@/redux/features/authApiSlice";
+import { useChangeUserPasswordMutation } from "@/redux/features/settingsApiSlice";
 import { setAuth } from "@/redux/features/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
 

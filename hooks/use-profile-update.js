@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { useUpdateProfileMutation } from "@/redux/features/authApiSlice";
+import { useUpdateProfileMutation } from "@/redux/features/settingsApiSlice";
 import { setUser } from "@/redux/features/userSlice";
 import { useAppDispatch } from "@/redux/hooks";
 
