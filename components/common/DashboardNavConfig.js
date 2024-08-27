@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-export default function NavConfig({ iconClassName }) {
+export default function DashboardNavConfig({ iconClassName }) {
 	const linksConfig = [
 		{
 			href: "/dashboard",

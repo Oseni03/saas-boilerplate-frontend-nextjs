@@ -7,7 +7,7 @@ import { Menu, Package2 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import UpgradeCard from "../common/UpgradeCard";
-import NavConfig from "../common/NavConfig";
+import DashboardNavConfig from "../common/DashboardNavConfig";
 
 function DashboardSheet() {
 	const pathname = usePathname();
@@ -18,7 +18,7 @@ function DashboardSheet() {
 	const notSelectedClassName =
 		"mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground";
 
-	const linksConfig = NavConfig(iconClassName);
+	const linksConfig = DashboardNavConfig(iconClassName);
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
