@@ -74,7 +74,12 @@ function NavigationLinks() {
 		{
 			href: "#",
 			className: "text-sm font-semibold leading-6 text-gray-900",
-			children: "Company",
+			children: "About us",
+		},
+		{
+			href: "#",
+			className: "text-sm font-semibold leading-6 text-gray-900",
+			children: "Pricing",
 		},
 	];
 	return (

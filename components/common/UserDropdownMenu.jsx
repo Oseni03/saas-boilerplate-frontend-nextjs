@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { CircleUser } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useAppDispatch } from "@/redux/hooks";
 import { logout as setLogout } from "@/redux/features/authSlice";
@@ -15,17 +15,28 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useAppSelector } from "@/redux/hooks";
+import { useCreateCustomerPortalMutation } from "@/redux/features/subscriptionApiSlice";
 
 function UserDropdownMenu() {
 	const dispatch = useAppDispatch();
 	const router = useRouter();
 	const [logout] = useLogoutMutation();
+	const [createBillingPortal] = useCreateCustomerPortalMutation();
 
 	const handleLogout = () => {
 		logout()
 			.unwrap()
 			.then(() => {
 				dispatch(setLogout());
+			});
+	};
+
+	const handleBilling = () => {
+		createBillingPortal()
+			.unwrap()
+			.then((data) => {
+				console.log(url);
+				redirect(data.url);
 			});
 	};
 
@@ -59,6 +70,9 @@ function UserDropdownMenu() {
 					}}
 				>
 					Dashboard
+				</DropdownMenuItem>
+				<DropdownMenuItem onSelect={handleBilling}>
+					Billing
 				</DropdownMenuItem>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem onSelect={handleLogout}>

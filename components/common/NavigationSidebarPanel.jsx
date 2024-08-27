@@ -52,8 +52,8 @@ function NavigationSidebarPanel({ isAuthenticated, router }) {
 	const generals = [
 		{ name: "Feaures", href: "" },
 		{ name: "Marketplace", href: "" },
-		{ name: "Company", href: "" },
-		{ name: "pricing", href: "" },
+		{ name: "About us", href: "" },
+		{ name: "pricing", href: "/#pricing" },
 	];
 	let items = [];
 	{
