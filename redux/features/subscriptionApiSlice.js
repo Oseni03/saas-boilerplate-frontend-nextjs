@@ -3,7 +3,10 @@ import { apiSlice } from "../services/apiSlice";
 const settingsApiSlice = apiSlice.injectEndpoints({
 	endpoints: (builder) => ({
 		retrievePrices: builder.query({
-			query: () => `/pricing/`,
+			query: ({ interval, featured }) =>
+				`/pricing/?interval=${encodeURIComponent(
+					interval
+				)}&featured=${encodeURIComponent(featured)}`,
 		}),
 		createCheckout: builder.mutation({
 			query: ({ price_id }) => ({

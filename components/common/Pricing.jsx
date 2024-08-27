@@ -1,95 +1,136 @@
+"use client";
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import PricingCard from "./PricingCard";
+import { useRetrievePricesQuery } from "@/redux/features/subscriptionApiSlice";
 
 const Pricing = () => {
-	const monthlyConfig = [
-		{
-			priceTitle: "Starter",
-			priceDescription: "Relevant for one user.",
-			price: "$19",
-			interval: "month",
-			features: [
-				"Individual configuration",
-				"No setup, or hidden fees",
-				"Team size: 5 developers",
-				"Premium support: 12 months",
-				"Free updates: 12 months",
-			],
-		},
-		{
-			priceTitle: "Company",
-			priceDescription:
-				"Relevant for multiple users, extended & premium support",
-			price: "$99",
-			interval: "month",
-			features: [
-				"Individual configuration",
-				"No setup, or hidden fees",
-				"Team size: 10 developers",
-				"Premium support: 24 months",
-				"Free updates: 24 months",
-			],
-		},
-		{
-			priceTitle: "Enterprise",
-			priceDescription:
-				"Best for large scale uses and extended redistribution rights.",
-			price: "$499",
-			interval: "month",
-			features: [
-				"Individual configuration",
-				"No setup, or hidden fees",
-				"Team size: 100+ developers",
-				"Premium support: 36 months",
-				"Free updates: 36 months",
-			],
-		},
-	];
+	const monthly = "month";
+	const yearly = "year";
 
-	const yearlyConfig = [
-		{
-			priceTitle: "Starter",
-			priceDescription: "Relevant for one user.",
-			price: "$190",
-			interval: "year",
-			features: [
-				"Individual configuration",
-				"No setup, or hidden fees",
-				"Team size: 5 developers",
-				"Premium support: 12 months",
-				"Free updates: 12 months",
-			],
-		},
-		{
-			priceTitle: "Company",
-			priceDescription:
-				"Relevant for multiple users, extended & premium support",
-			price: "$990",
-			interval: "year",
-			features: [
-				"Individual configuration",
-				"No setup, or hidden fees",
-				"Team size: 10 developers",
-				"Premium support: 24 months",
-				"Free updates: 24 months",
-			],
-		},
-		{
-			priceTitle: "Enterprise",
-			priceDescription:
-				"Best for large scale uses and extended redistribution rights.",
-			price: "$4990",
-			interval: "year",
-			features: [
-				"Individual configuration",
-				"No setup, or hidden fees",
-				"Team size: 100+ developers",
-				"Premium support: 36 months",
-				"Free updates: 36 months",
-			],
-		},
-	];
+	const { monthlyResp } = useRetrievePricesQuery({ interval: monthly });
+	console.log(monthlyResp);
+
+	const { yearlyResp } = useRetrievePricesQuery({ interval: yearly });
+	console.log(yearlyResp);
+
+	let monthlyConfig = [];
+	let yearlyConfig = [];
+
+	if (monthlyResp) {
+		monthlyConfig = monthlyResp;
+	} else {
+		monthlyConfig = [
+			{
+				subscription_name: "Starter",
+				subscription_subtitle: "Relevant for one user.",
+				currency: "usd",
+				interval: "month",
+				features: [
+					"Individual configuration",
+					"No setup, or hidden fees",
+					"Team size: 5 developers",
+					"Premium support: 12 months",
+					"Free updates: 12 months",
+				],
+				trial_period_days: 7,
+				amount: "19",
+				interval_display: "monthly",
+			},
+			{
+				subscription_name: "Company",
+				subscription_subtitle:
+					"Relevant for multiple users, extended & premium support",
+				currency: "usd",
+				interval: "month",
+				features: [
+					"Individual configuration",
+					"No setup, or hidden fees",
+					"Team size: 10 developers",
+					"Premium support: 24 months",
+					"Free updates: 24 months",
+				],
+				trial_period_days: 0,
+				amount: "99",
+				interval_display: "monthly",
+			},
+			{
+				subscription_name: "Enterprise",
+				subscription_subtitle:
+					"Best for large scale uses and extended redistribution rights.",
+				currency: "usd",
+				interval: "month",
+				features: [
+					"Individual configuration",
+					"No setup, or hidden fees",
+					"Team size: 10 developers",
+					"Premium support: 24 months",
+					"Free updates: 24 months",
+				],
+				trial_period_days: 0,
+				amount: "499",
+				interval_display: "monthly",
+			},
+		];
+	}
+
+	if (yearlyResp) {
+		yearlyConfig = yearlyResp;
+	} else {
+		yearlyConfig = [
+			{
+				subscription_name: "Starter",
+				subscription_subtitle: "Relevant for one user.",
+				currency: "usd",
+				interval: "year",
+				features: [
+					"Individual configuration",
+					"No setup, or hidden fees",
+					"Team size: 100+ developers",
+					"Premium support: 36 months",
+					"Free updates: 36 months",
+				],
+				trial_period_days: 7,
+				amount: "190",
+				interval_display: "yearly",
+			},
+			{
+				subscription_name: "Company",
+				subscription_subtitle:
+					"Relevant for multiple users, extended & premium support",
+				currency: "usd",
+				interval: "year",
+				features: [
+					"Individual configuration",
+					"No setup, or hidden fees",
+					"Team size: 100+ developers",
+					"Premium support: 36 months",
+					"Free updates: 36 months",
+				],
+				trial_period_days: 0,
+				amount: "990",
+				interval_display: "yearly",
+			},
+			{
+				subscription_name: "Enterprise",
+				subscription_subtitle:
+					"Best for large scale uses and extended redistribution rights.",
+				currency: "usd",
+				interval: "year",
+				features: [
+					"Individual configuration",
+					"No setup, or hidden fees",
+					"Team size: 100+ developers",
+					"Premium support: 36 months",
+					"Free updates: 36 months",
+				],
+				trial_period_days: 0,
+				amount: "4990",
+				interval_display: "yearly",
+			},
+		];
+	}
+
 	return (
 		<section className="bg-white dark:bg-gray-900">
 			<div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -116,12 +157,17 @@ const Pricing = () => {
 							{monthlyConfig.map((item) => (
 								<PricingCard
 									key={item.price}
-									description={item.priceDescription}
-									price={item.price}
+									subscription_subtitle={
+										item.subscription_subtitle
+									}
+									amount={item.amount}
 									interval={item.interval}
 									features={item.features}
+									currency={item.currency}
+									trial_period_days={item.trial_period_days}
+									interval_display={item.interval_display}
 								>
-									{item.priceTitle}
+									{item.subscription_name}
 								</PricingCard>
 							))}
 						</div>
@@ -132,12 +178,17 @@ const Pricing = () => {
 							{yearlyConfig.map((item) => (
 								<PricingCard
 									key={item.price}
-									description={item.priceDescription}
-									price={item.price}
+									subscription_subtitle={
+										item.subscription_subtitle
+									}
+									amount={item.amount}
 									interval={item.interval}
 									features={item.features}
+									currency={item.currency}
+									trial_period_days={item.trial_period_days}
+									interval_display={item.interval_display}
 								>
-									{item.priceTitle}
+									{item.subscription_name}
 								</PricingCard>
 							))}
 						</div>
