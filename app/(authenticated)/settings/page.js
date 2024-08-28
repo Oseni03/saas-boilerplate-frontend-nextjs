@@ -1,7 +1,7 @@
 import ProfileUpdateCard from "@/components/settings/ProfileUpdateCard";
 import NotificationPreferenceCard from "@/components/settings/NotificationPreferenceCard";
 import ChangePasswordCard from "@/components/settings/ChangePasswordCard";
-import ArchiveAccountCard from "@/components/settings/ArchiveAccountCard";
+import DeactivateAccountCard from "@/components/settings/DeactivateAccountCard";
 import SettingsHeader from "@/components/settings/SettingsHeader";
 
 export const metadata = {
@@ -19,7 +19,7 @@ function Page() {
 						<ProfileUpdateCard />
 						<NotificationPreferenceCard />
 						<ChangePasswordCard />
-						<ArchiveAccountCard />
+						<DeactivateAccountCard />
 					</div>
 				</div>
 			</div>

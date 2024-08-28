@@ -12,7 +12,7 @@ import { useAppDispatch } from "@/redux/hooks";
 import { logout as setLogout } from "@/redux/features/authSlice";
 import { Button } from "@/components/ui/button";
 
-function ArchiveAccountCard() {
+function DeactivateAccountCard() {
 	const dispatch = useAppDispatch();
 	const [deactivateAccount] = useDeactivateAccountMutation();
 
@@ -26,14 +26,14 @@ function ArchiveAccountCard() {
 	return (
 		<Card x-chunk="dashboard-07-chunk-5" className="border-red-800">
 			<CardHeader>
-				<CardTitle>Archive Account</CardTitle>
+				<CardTitle>Deactivate Account</CardTitle>
 				<CardDescription>
 					Lipsum dolor sit amet, consectetur adipiscing elit.
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
 				<MyAlertDialog
-					dialogTitle="Archive account"
+					dialogTitle="Deactivate account"
 					dialogDescription="Are you sure you want to deactivate this account? Cannot be undone"
 					onClick={handleAccountDeactivation}
 					ButtonClassName="bg-red-700 hover:bg-red-900"
@@ -47,4 +47,4 @@ function ArchiveAccountCard() {
 	);
 }
 
-export default ArchiveAccountCard;
+export default DeactivateAccountCard;
