@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import Provider from "@/redux/provider";
 import Setup from "../components/utils/Setup";
+import FeedbackWidget from "@/components/common/FeedbackWidget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,10 @@ export default function RootLayout({ children }) {
 			<body className={inter.className}>
 				<Provider>
 					<Setup />
-					<div>{children}</div>
+					<div>
+						{children}
+						<FeedbackWidget />
+					</div>
 					{/* className="mx-auto max-w-xl px-2 sm:px-6 lg:px-8 py-8" */}
 				</Provider>
 			</body>
