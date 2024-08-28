@@ -166,6 +166,7 @@ const Pricing = () => {
 									currency={item.currency}
 									trial_period_days={item.trial_period_days}
 									interval_display={item.interval_display}
+									price_id="cytvubyiq"
 								>
 									{item.subscription_name}
 								</PricingCard>

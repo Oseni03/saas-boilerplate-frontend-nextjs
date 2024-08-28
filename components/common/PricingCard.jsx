@@ -1,4 +1,8 @@
-import Link from "next/link";
+"use client";
+import { Button } from "../ui/button";
+import { useCreateCheckoutMutation } from "@/redux/features/subscriptionApiSlice";
+import { redirect } from "next/navigation";
+import { toast } from "react-toastify";
 
 function PricingCard({
 	features,
@@ -9,6 +13,25 @@ function PricingCard({
 	currency,
 	...props
 }) {
+	const [createCheckout] = useCreateCheckoutMutation();
+
+	const handleSubscribeButton = () => {
+		console.log(props.price_id);
+		createCheckout(props.price_id)
+			.unwrap()
+			.then((data) => {
+				redirect(data.url);
+			})
+			.catch((error) => {
+				console.log(error);
+				if (error.status === 401) {
+					toast.error("Sign in required");
+					redirect("/login");
+				} else {
+					toast.error("Something went wrong");
+				}
+			});
+	};
 	return (
 		<div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
 			<h3 className="mb-4 text-2xl font-semibold">{children}</h3>
@@ -45,12 +68,12 @@ function PricingCard({
 					</li>
 				))}
 			</ul>
-			<Link
-				href="#"
+			<Button
+				onClick={handleSubscribeButton}
 				className="text-white bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary"
 			>
 				Get started
-			</Link>
+			</Button>
 		</div>
 	);
 }
