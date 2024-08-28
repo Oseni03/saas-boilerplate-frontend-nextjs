@@ -11,8 +11,8 @@ function RequireAuth({ children }) {
 
 	if (isLoading) {
 		return (
-			<div className="h-screen">
-				<div className="flex justify-center my-auto">
+			<div className="h-screen flex items-center">
+				<div className="mx-auto">
 					<Spinner />;
 				</div>
 			</div>
@@ -20,7 +20,7 @@ function RequireAuth({ children }) {
 	}
 
 	if (!isAuthenticated) {
-		redirect("/auth/login");
+		redirect(process.env.LOGIN_URL);
 	}
 
 	return <>{children}</>;
