@@ -9,7 +9,15 @@ const ticketsApiSlice = apiSlice.injectEndpoints({
 				body: { rating, title, message },
 			}),
 		}),
+		createSupport: builder.mutation({
+			query: ({ email, full_name, title, message }) => ({
+				url: `/tickets/supports/`,
+				method: "POST",
+				body: { email, full_name, title, message },
+			}),
+		}),
 	}),
 });
 
-export const { useCreateFeedbackMutation } = ticketsApiSlice;
+export const { useCreateFeedbackMutation, useCreateSupportMutation } =
+	ticketsApiSlice;

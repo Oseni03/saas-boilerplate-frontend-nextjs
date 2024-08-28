@@ -29,8 +29,8 @@ function MyInput({
 					</Link>
 				)}
 			</div>
-			{rows ? (
-				<Textarea name={labelId} rows={rows} />
+			{rows | (type === "textarea") ? (
+				<Textarea name={labelId} rows={rows} onChange={onChange} />
 			) : (
 				<Input
 					type={type}
