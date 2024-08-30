@@ -23,11 +23,11 @@ function useSocialAuth(authenticate, provider) {
 				.then(() => {
 					dispatch(setAuth());
 					toast.success("Logged in");
-					router.replace("/dashboard");
+					router.replace(LOGIN_REDIRECT_URL);
 				})
 				.catch(() => {
 					toast.error("Failed to login");
-					router.push("/auth/login");
+					router.push(LOGIN_URL);
 				});
 		}
 

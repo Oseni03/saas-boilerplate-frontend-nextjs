@@ -21,7 +21,7 @@ function usePasswordResetConfirm(user, token) {
 			.unwrap()
 			.then(() => {
 				toast.success("Password reset successful");
-				router.push("/auth/login");
+				router.push(PASSWORD_RESET_SUCCESSFUL_REDIRECT_URL);
 			})
 			.catch(() => {
 				toast.error("Password reset failed");

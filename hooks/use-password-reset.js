@@ -20,7 +20,7 @@ function usePasswordReset() {
 			.unwrap()
 			.finally(() => {
 				toast.success("Check your email for further instructions");
-				router.push("/auth/login");
+				router.push(PASSWORD_RESET_REDIRECT_URL);
 			});
 	};
 	return {

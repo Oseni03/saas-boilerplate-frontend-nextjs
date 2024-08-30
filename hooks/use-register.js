@@ -26,7 +26,7 @@ function useRegister() {
 			.unwrap()
 			.then(() => {
 				toast.success("Please check email to activate account");
-				router.push("/auth/login");
+				router.push(REGISTRATION_REDIRECT_URL);
 			})
 			.catch(() => {
 				toast.error("Failed to register account");

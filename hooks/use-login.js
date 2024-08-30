@@ -30,7 +30,7 @@ function useLogin() {
 			.then(() => {
 				dispatch(setAuth());
 				toast.success("Login successful");
-				router.push("/dashboard");
+				router.replace(LOGIN_REDIRECT_URL);
 			})
 			.catch(() => {
 				toast.error("Invalid login details");

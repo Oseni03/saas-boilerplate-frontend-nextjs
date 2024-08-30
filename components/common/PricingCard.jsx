@@ -27,7 +27,7 @@ function PricingCard({
 				console.log(error);
 				if (error.status === 401) {
 					toast.error("Sign in required");
-					router.push("/auth/login");
+					router.push(LOGIN_URL);
 				} else {
 					toast.error("Something went wrong");
 				}

@@ -4,10 +4,116 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import PricingCard from "./PricingCard";
 import { useRetrievePricesQuery } from "@/redux/features/subscriptionApiSlice";
 
-const Pricing = () => {
-	const monthly = "month";
-	const yearly = "year";
+const monthly = "month";
+const yearly = "year";
 
+const DUMMY_MONTHLY_CONFIG = [
+	{
+		subscription_name: "Starter",
+		subscription_subtitle: "Relevant for one user.",
+		currency: "usd",
+		interval: "month",
+		features: [
+			"Individual configuration",
+			"No setup, or hidden fees",
+			"Team size: 5 developers",
+			"Premium support: 12 months",
+			"Free updates: 12 months",
+		],
+		trial_period_days: 7,
+		amount: "19",
+		interval_display: "monthly",
+	},
+	{
+		subscription_name: "Company",
+		subscription_subtitle:
+			"Relevant for multiple users, extended & premium support",
+		currency: "usd",
+		interval: "month",
+		features: [
+			"Individual configuration",
+			"No setup, or hidden fees",
+			"Team size: 10 developers",
+			"Premium support: 24 months",
+			"Free updates: 24 months",
+		],
+		trial_period_days: 0,
+		amount: "99",
+		interval_display: "monthly",
+	},
+	{
+		subscription_name: "Enterprise",
+		subscription_subtitle:
+			"Best for large scale uses and extended redistribution rights.",
+		currency: "usd",
+		interval: "month",
+		features: [
+			"Individual configuration",
+			"No setup, or hidden fees",
+			"Team size: 10 developers",
+			"Premium support: 24 months",
+			"Free updates: 24 months",
+		],
+		trial_period_days: 0,
+		amount: "499",
+		interval_display: "monthly",
+	},
+];
+
+const DUMMY_YEARLY_CONFIG = [
+	{
+		subscription_name: "Starter",
+		subscription_subtitle: "Relevant for one user.",
+		currency: "usd",
+		interval: "year",
+		features: [
+			"Individual configuration",
+			"No setup, or hidden fees",
+			"Team size: 100+ developers",
+			"Premium support: 36 months",
+			"Free updates: 36 months",
+		],
+		trial_period_days: 7,
+		amount: "190",
+		interval_display: "yearly",
+	},
+	{
+		subscription_name: "Company",
+		subscription_subtitle:
+			"Relevant for multiple users, extended & premium support",
+		currency: "usd",
+		interval: "year",
+		features: [
+			"Individual configuration",
+			"No setup, or hidden fees",
+			"Team size: 100+ developers",
+			"Premium support: 36 months",
+			"Free updates: 36 months",
+		],
+		trial_period_days: 0,
+		amount: "990",
+		interval_display: "yearly",
+	},
+	{
+		subscription_name: "Enterprise",
+		subscription_subtitle:
+			"Best for large scale uses and extended redistribution rights.",
+		currency: "usd",
+		interval: "year",
+		features: [
+			"Individual configuration",
+			"No setup, or hidden fees",
+			"Team size: 100+ developers",
+			"Premium support: 36 months",
+			"Free updates: 36 months",
+		],
+		trial_period_days: 0,
+		amount: "4990",
+		interval_display: "yearly",
+	},
+];
+
+const Pricing = () => {
 	const { monthlyResp } = useRetrievePricesQuery({ interval: monthly });
 	console.log(monthlyResp);
 
@@ -20,115 +126,13 @@ const Pricing = () => {
 	if (monthlyResp) {
 		monthlyConfig = monthlyResp;
 	} else {
-		monthlyConfig = [
-			{
-				subscription_name: "Starter",
-				subscription_subtitle: "Relevant for one user.",
-				currency: "usd",
-				interval: "month",
-				features: [
-					"Individual configuration",
-					"No setup, or hidden fees",
-					"Team size: 5 developers",
-					"Premium support: 12 months",
-					"Free updates: 12 months",
-				],
-				trial_period_days: 7,
-				amount: "19",
-				interval_display: "monthly",
-			},
-			{
-				subscription_name: "Company",
-				subscription_subtitle:
-					"Relevant for multiple users, extended & premium support",
-				currency: "usd",
-				interval: "month",
-				features: [
-					"Individual configuration",
-					"No setup, or hidden fees",
-					"Team size: 10 developers",
-					"Premium support: 24 months",
-					"Free updates: 24 months",
-				],
-				trial_period_days: 0,
-				amount: "99",
-				interval_display: "monthly",
-			},
-			{
-				subscription_name: "Enterprise",
-				subscription_subtitle:
-					"Best for large scale uses and extended redistribution rights.",
-				currency: "usd",
-				interval: "month",
-				features: [
-					"Individual configuration",
-					"No setup, or hidden fees",
-					"Team size: 10 developers",
-					"Premium support: 24 months",
-					"Free updates: 24 months",
-				],
-				trial_period_days: 0,
-				amount: "499",
-				interval_display: "monthly",
-			},
-		];
+		monthlyConfig = DUMMY_MONTHLY_CONFIG;
 	}
 
 	if (yearlyResp) {
 		yearlyConfig = yearlyResp;
 	} else {
-		yearlyConfig = [
-			{
-				subscription_name: "Starter",
-				subscription_subtitle: "Relevant for one user.",
-				currency: "usd",
-				interval: "year",
-				features: [
-					"Individual configuration",
-					"No setup, or hidden fees",
-					"Team size: 100+ developers",
-					"Premium support: 36 months",
-					"Free updates: 36 months",
-				],
-				trial_period_days: 7,
-				amount: "190",
-				interval_display: "yearly",
-			},
-			{
-				subscription_name: "Company",
-				subscription_subtitle:
-					"Relevant for multiple users, extended & premium support",
-				currency: "usd",
-				interval: "year",
-				features: [
-					"Individual configuration",
-					"No setup, or hidden fees",
-					"Team size: 100+ developers",
-					"Premium support: 36 months",
-					"Free updates: 36 months",
-				],
-				trial_period_days: 0,
-				amount: "990",
-				interval_display: "yearly",
-			},
-			{
-				subscription_name: "Enterprise",
-				subscription_subtitle:
-					"Best for large scale uses and extended redistribution rights.",
-				currency: "usd",
-				interval: "year",
-				features: [
-					"Individual configuration",
-					"No setup, or hidden fees",
-					"Team size: 100+ developers",
-					"Premium support: 36 months",
-					"Free updates: 36 months",
-				],
-				trial_period_days: 0,
-				amount: "4990",
-				interval_display: "yearly",
-			},
-		];
+		yearlyConfig = DUMMY_YEARLY_CONFIG;
 	}
 
 	return (
