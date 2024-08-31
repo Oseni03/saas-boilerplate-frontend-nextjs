@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "../ui/button";
 import { useCreateCheckoutMutation } from "@/redux/features/subscriptionApiSlice";
-import { redirect, useRouter } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
 function PricingCard({
@@ -15,9 +15,9 @@ function PricingCard({
 }) {
 	const [createCheckout] = useCreateCheckoutMutation();
 	const router = useRouter();
+	const pathname = usePathname();
 
 	const handleSubscribeButton = () => {
-		console.log(props.price_id);
 		createCheckout(props.price_id)
 			.unwrap()
 			.then((data) => {
@@ -27,7 +27,11 @@ function PricingCard({
 				console.log(error);
 				if (error.status === 401) {
 					toast.error("Sign in required");
-					router.push(LOGIN_URL);
+					let loginWithNextUrl = `${LOGIN_URL}?next=${pathname}`;
+					if (LOGIN_URL === pathname) {
+						loginWithNextUrl = `${LOGIN_URL}`;
+					}
+					router.push(loginWithNextUrl);
 				} else {
 					toast.error("Something went wrong");
 				}
