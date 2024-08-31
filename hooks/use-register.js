@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useRegisterMutation } from "@/redux/features/authApiSlice";
+import { REGISTRATION_REDIRECT_URL } from "@/utils/constants";
 
 function useRegister() {
 	const [register, { isLoading }] = useRegisterMutation();

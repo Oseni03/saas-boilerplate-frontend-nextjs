@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useLoginMutation } from "@/redux/features/authApiSlice";
 import { setAuth } from "@/redux/features/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
+import { LOGIN_REDIRECT_URL } from "@/utils/constants";
 
 const invalidNextUrl = ["/auth/login", "/auth/logout", "password-reset"];
 

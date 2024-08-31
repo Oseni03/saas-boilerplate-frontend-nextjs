@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useResetPasswordMutation } from "@/redux/features/authApiSlice";
+import { PASSWORD_RESET_REDIRECT_URL } from "@/utils/constants";
 
 function usePasswordReset() {
 	const [reset, { isLoading }] = useResetPasswordMutation();

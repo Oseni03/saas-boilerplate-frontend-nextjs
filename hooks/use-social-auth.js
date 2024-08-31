@@ -3,7 +3,7 @@ import { useAppDispatch } from "@/redux/hooks";
 import { setAuth } from "@/redux/features/authSlice";
 import { toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";
-import { current } from "@reduxjs/toolkit";
+import { LOGIN_REDIRECT_URL, LOGIN_URL } from "@/utils/constants";
 
 function useSocialAuth(authenticate, provider) {
 	const dispatch = useAppDispatch();
