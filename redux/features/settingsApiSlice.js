@@ -42,6 +42,19 @@ const settingsApiSlice = apiSlice.injectEndpoints({
 				method: "DELETE",
 			}),
 		}),
+		enable2FAAuth: builder.mutation({
+			query: () => ({
+				url: `/users/generate-otp/`,
+				method: "POST",
+			}),
+		}),
+		verifyOTP: builder.mutation({
+			query: (opt_token) => ({
+				url: `/users/verify-otp/`,
+				method: "POST",
+				body: { opt_token },
+			}),
+		}),
 	}),
 });
 
@@ -51,4 +64,6 @@ export const {
 	useUpdateNotificationPreferenceMutation,
 	useChangeUserPasswordMutation,
 	useDeactivateAccountMutation,
+	useEnable2FAAuthMutation,
+	useVerifyOTPMutation,
 } = settingsApiSlice;

@@ -3,6 +3,7 @@ import NotificationPreferenceCard from "@/components/settings/NotificationPrefer
 import ChangePasswordCard from "@/components/settings/ChangePasswordCard";
 import DeactivateAccountCard from "@/components/settings/DeactivateAccountCard";
 import SettingsHeader from "@/components/settings/SettingsHeader";
+import TwoFactorAuthCard from "@/components/settings/TwoFactorAuthCard";
 
 export const metadata = {
 	title: "Account settings - Boilerplate",
@@ -18,6 +19,7 @@ function Page() {
 						<SettingsHeader />
 						<ProfileUpdateCard />
 						<NotificationPreferenceCard />
+						<TwoFactorAuthCard />
 						<ChangePasswordCard />
 						<DeactivateAccountCard />
 					</div>

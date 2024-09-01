@@ -3,6 +3,7 @@ import React from "react";
 import { useAppSelector } from "@/redux/hooks";
 import { usePathname, useRouter } from "next/navigation";
 import Spinner from "../common/Spinner";
+import { LOGIN_URL } from "@/utils/constants";
 
 function RequireAuth({ children }) {
 	const { isLoading, isAuthenticated } = useAppSelector(
