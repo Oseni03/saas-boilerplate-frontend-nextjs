@@ -7,16 +7,16 @@ function useVerifyOTP() {
 	const [verify, { isLoading }] = useVerifyOTPMutation();
 	const router = useRouter();
 
-	const [opt_token, setOTP] = useState("");
+	const [otp_token, setOTP] = useState("");
 
-	const onChange = (event) => {
-		setOTP(event.target.value);
+	const onChange = (value) => {
+		setOTP(value);
 	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 
-		verify(opt_token)
+		verify(otp_token)
 			.unwrap()
 			.then(() => {
 				toast.success("Two-step authentication activated");
@@ -28,7 +28,7 @@ function useVerifyOTP() {
 			});
 	};
 	return {
-		opt_token,
+		otp_token,
 		isLoading,
 		onChange,
 		onSubmit,

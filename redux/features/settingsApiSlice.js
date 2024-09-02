@@ -49,10 +49,16 @@ const settingsApiSlice = apiSlice.injectEndpoints({
 			}),
 		}),
 		verifyOTP: builder.mutation({
-			query: (opt_token) => ({
+			query: (otp_token) => ({
 				url: `/users/verify-otp/`,
 				method: "POST",
-				body: { opt_token },
+				body: { otp_token },
+			}),
+		}),
+		disableOTP: builder.mutation({
+			query: () => ({
+				url: `/users/disable-otp/`,
+				method: "POST",
 			}),
 		}),
 	}),
@@ -66,4 +72,5 @@ export const {
 	useDeactivateAccountMutation,
 	useEnable2FAAuthMutation,
 	useVerifyOTPMutation,
+	useDisableOTPMutation,
 } = settingsApiSlice;

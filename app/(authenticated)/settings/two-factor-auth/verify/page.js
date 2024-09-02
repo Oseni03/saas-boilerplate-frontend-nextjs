@@ -6,6 +6,12 @@ import useVerifyOTP from "@/hooks/use-verify-otp";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Spinner from "@/components/common/Spinner";
+import {
+	InputOTP,
+	InputOTPGroup,
+	InputOTPSeparator,
+	InputOTPSlot,
+} from "@/components/ui/input-otp";
 
 function Page() {
 	const [enable2FAAuth] = useEnable2FAAuthMutation();
@@ -33,7 +39,7 @@ function Page() {
 	return (
 		<div className="flex justify-end w-full">
 			<div className="container mx-auto p-4">
-				<div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+				<div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3">
 					<div className="flex flex-1 justify-center items-center p-4 text-white rounded-md">
 						{qrImage && (
 							<img
@@ -44,7 +50,7 @@ function Page() {
 						)}
 					</div>
 
-					<div className="flex-1 p-4 text-white rounded-md">
+					<div className="flex-1 p-4 rounded-md">
 						<p className="text-2xl text-gray-700 font-bold mb-4">
 							Use an Authenticator App to enable 2FA
 						</p>
@@ -60,14 +66,26 @@ function Page() {
 						</ul>
 						<form
 							onSubmit={onSubmit}
-							className="space-y-4 md:space-y-6 mb-3"
+							className="flex flex-col space-y-4 md:space-y-6 mb-3 justify-center"
 						>
-							<Input
-								type="text"
-								className="w-full"
+							<InputOTP
+								name="otp_token"
+								maxLength={6}
 								value={otp_token}
 								onChange={onChange}
-							/>
+							>
+								<InputOTPGroup>
+									<InputOTPSlot index={0} />
+									<InputOTPSlot index={1} />
+									<InputOTPSlot index={2} />
+								</InputOTPGroup>
+								<InputOTPSeparator />
+								<InputOTPGroup>
+									<InputOTPSlot index={3} />
+									<InputOTPSlot index={4} />
+									<InputOTPSlot index={5} />
+								</InputOTPGroup>
+							</InputOTP>
 							<Button
 								type="submit"
 								className="w-full"
