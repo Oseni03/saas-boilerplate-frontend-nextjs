@@ -3,15 +3,7 @@ import { useEffect, useState } from "react";
 import QRCode from "qrcode";
 import { useEnable2FAAuthMutation } from "@/redux/features/settingsApiSlice";
 import useVerifyOTP from "@/hooks/use-verify-otp";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import Spinner from "@/components/common/Spinner";
-import {
-	InputOTP,
-	InputOTPGroup,
-	InputOTPSeparator,
-	InputOTPSlot,
-} from "@/components/ui/input-otp";
+import OTPForm from "@/components/forms/OTPForm";
 
 function Page() {
 	const [enable2FAAuth] = useEnable2FAAuthMutation();
@@ -64,36 +56,13 @@ function Page() {
 								the code below from your app.
 							</li>
 						</ul>
-						<form
+						<OTPForm
+							name="otp_token"
+							value={otp_token}
+							isLoading={isLoading}
+							onChange={onChange}
 							onSubmit={onSubmit}
-							className="flex flex-col space-y-4 md:space-y-6 mb-3 justify-center"
-						>
-							<InputOTP
-								name="otp_token"
-								maxLength={6}
-								value={otp_token}
-								onChange={onChange}
-							>
-								<InputOTPGroup>
-									<InputOTPSlot index={0} />
-									<InputOTPSlot index={1} />
-									<InputOTPSlot index={2} />
-								</InputOTPGroup>
-								<InputOTPSeparator />
-								<InputOTPGroup>
-									<InputOTPSlot index={3} />
-									<InputOTPSlot index={4} />
-									<InputOTPSlot index={5} />
-								</InputOTPGroup>
-							</InputOTP>
-							<Button
-								type="submit"
-								className="w-full"
-								disabled={isLoading}
-							>
-								{isLoading ? <Spinner /> : `Verify`}
-							</Button>
-						</form>
+						/>
 					</div>
 				</div>
 			</div>

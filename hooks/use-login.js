@@ -32,17 +32,21 @@ function useLogin() {
 
 		login({ email, password })
 			.unwrap()
-			.then(() => {
-				dispatch(setAuth());
-				const nexturlValid =
-					nextUrl &&
-					nextUrl.startsWith("/") &&
-					!invalidNextUrl.includes(nextUrl);
-				toast.success("Login successful");
-				if (nexturlValid) {
-					router.replace(nextUrl);
+			.then((resp) => {
+				if (resp.otp_auth_token) {
+					router.push("/auth/validate-otp");
 				} else {
-					router.replace(LOGIN_REDIRECT_URL);
+					dispatch(setAuth());
+					const nexturlValid =
+						nextUrl &&
+						nextUrl.startsWith("/") &&
+						!invalidNextUrl.includes(nextUrl);
+					toast.success("Login successful");
+					if (nexturlValid) {
+						router.replace(nextUrl);
+					} else {
+						router.replace(LOGIN_REDIRECT_URL);
+					}
 				}
 			})
 			.catch(() => {

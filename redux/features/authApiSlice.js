@@ -70,6 +70,13 @@ const authApiSlice = apiSlice.injectEndpoints({
 				body: { new_password },
 			}),
 		}),
+		validateOTP: builder.mutation({
+			query: (otp_token) => ({
+				url: `/auth/validate-otp/`,
+				method: "POST",
+				body: { otp_token },
+			}),
+		}),
 	}),
 });
 
@@ -84,4 +91,5 @@ export const {
 	useLogoutMutation,
 	useResetPasswordMutation,
 	useResetPasswordConfirmMutation,
+	useValidateOTPMutation,
 } = authApiSlice;
