@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useValidateOTPMutation } from "@/redux/features/authApiSlice";
 import { LOGIN_REDIRECT_URL } from "@/utils/constants";
 import { useAppDispatch } from "@/redux/hooks";
+import { setAuth } from "@/redux/features/authSlice";
 
 function useValidateOTP() {
 	const [validate, { isLoading }] = useValidateOTPMutation();
