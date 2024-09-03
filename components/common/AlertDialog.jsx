@@ -10,12 +10,9 @@ import {
 	AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-export function MyAlertDialog(
-	{ dialogTitle, dialogDescription, children, ...props },
-	ref
-) {
+export function MyAlertDialog({ dialogTitle, dialogDescription, children, ...props }) {
 	return (
-		<AlertDialog ref={ref}>
+		<AlertDialog>
 			<AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
 			<AlertDialogContent>
 				<AlertDialogHeader>

@@ -5,6 +5,7 @@ import { useValidateOTPMutation } from "@/redux/features/authApiSlice";
 import { LOGIN_REDIRECT_URL } from "@/utils/constants";
 import { useAppDispatch } from "@/redux/hooks";
 import { setAuth } from "@/redux/features/authSlice";
+import { setUser } from "@/redux/features/userSlice";
 
 function useValidateOTP() {
 	const [validate, { isLoading }] = useValidateOTPMutation();
@@ -22,8 +23,9 @@ function useValidateOTP() {
 
 		validate(otp_token)
 			.unwrap()
-			.then(() => {
+			.then((resp) => {
 				dispatch(setAuth());
+				dispatch(setUser(resp.user));
 				toast.success("Login successful");
 				router.replace(LOGIN_REDIRECT_URL);
 			});

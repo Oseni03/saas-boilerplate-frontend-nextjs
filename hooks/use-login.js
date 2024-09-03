@@ -5,6 +5,7 @@ import { useLoginMutation } from "@/redux/features/authApiSlice";
 import { setAuth } from "@/redux/features/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { LOGIN_REDIRECT_URL } from "@/utils/constants";
+import { setUser } from "@/redux/features/userSlice";
 
 const invalidNextUrl = ["/auth/login", "/auth/logout", "password-reset"];
 
@@ -33,10 +34,12 @@ function useLogin() {
 		login({ email, password })
 			.unwrap()
 			.then((resp) => {
+				console.log(resp);
 				if (resp.otp_auth_token) {
 					router.push("/auth/validate-otp");
 				} else {
 					dispatch(setAuth());
+					dispatch(setUser(resp.user));
 					const nexturlValid =
 						nextUrl &&
 						nextUrl.startsWith("/") &&

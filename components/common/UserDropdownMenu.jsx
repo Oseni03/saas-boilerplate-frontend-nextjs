@@ -14,7 +14,6 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useAppSelector } from "@/redux/hooks";
 import { useCreateCustomerPortalMutation } from "@/redux/features/subscriptionApiSlice";
 
 function UserDropdownMenu() {
@@ -40,8 +39,6 @@ function UserDropdownMenu() {
 			});
 	};
 
-	const user = useAppSelector((state) => state.user.user);
-	console.log(user);
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild className="ms-auto">

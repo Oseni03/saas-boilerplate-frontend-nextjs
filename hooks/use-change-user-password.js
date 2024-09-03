@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useChangeUserPasswordMutation } from "@/redux/features/settingsApiSlice";
 import { setAuth } from "@/redux/features/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
+import useVerify from "./use-verify";
 
 function useChangeUserPassword() {
 	const [changePassword, { isLoading }] = useChangeUserPasswordMutation();
@@ -29,6 +30,7 @@ function useChangeUserPassword() {
 			.unwrap()
 			.then(() => {
 				dispatch(setAuth());
+				useVerify();
 				toast.success("Password change");
 			})
 			.catch(() => {
