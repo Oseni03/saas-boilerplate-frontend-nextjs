@@ -9,8 +9,10 @@ function Page() {
 	useSocialAuth(googleAuthenticate, "google-oauth2");
 
 	return (
-		<div className="h-screen">
-			<Spinner />
+		<div className="h-screen flex items-center">
+			<div className="mx-auto">
+				<Spinner />;
+			</div>
 		</div>
 	);
 }

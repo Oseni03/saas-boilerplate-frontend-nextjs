@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
 import { useAppDispatch } from "@/redux/hooks";
 import { setAuth } from "@/redux/features/authSlice";
+import { setUser } from "@/redux/features/userSlice";
 import { toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";
 import { LOGIN_REDIRECT_URL, LOGIN_URL } from "@/utils/constants";
-import useVerify from "./use-verify";
 
 function useSocialAuth(authenticate, provider) {
 	const dispatch = useAppDispatch();
@@ -21,9 +21,9 @@ function useSocialAuth(authenticate, provider) {
 		if (state && code && !effectRan.current) {
 			authenticate({ provider, state, code })
 				.unwrap()
-				.then(() => {
+				.then((resp) => {
 					dispatch(setAuth());
-					useVerify();
+					dispatch(setUser(resp.user));
 					toast.success("Logged in");
 					router.replace(LOGIN_REDIRECT_URL);
 				})

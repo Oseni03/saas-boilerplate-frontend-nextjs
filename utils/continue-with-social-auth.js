@@ -9,7 +9,7 @@ async function continueWithSocialAuth(provider, redirect) {
 				? process.env.NEXT_PUBLIC_REDIRECT_URL
 				: "http://localhost:3000"
 		}/auth/${redirect}`;
-
+		
 		const res = await fetch(url, {
 			method: "GET",
 			headers: {
@@ -18,7 +18,7 @@ async function continueWithSocialAuth(provider, redirect) {
 			credentials: "include",
 		});
 
-		const data = res.json();
+		const data = await res.json();
 
 		if (res.status === 200 && typeof window != "undefined") {
 			window.location.replace(data.authorization_url);
@@ -26,7 +26,7 @@ async function continueWithSocialAuth(provider, redirect) {
 			toast.error("Something went wrong");
 		}
 	} catch (error) {
-		toast.error(error);
+		toast.error(error.message || "An error occurred");
 	}
 }
 
