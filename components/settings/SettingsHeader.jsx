@@ -11,7 +11,7 @@ function SettingsHeader() {
 			<Button
 				variant="outline"
 				size="icon"
-				className="h-7 w-7 text-white"
+				className="h-7 w-7"
 				onClick={() => router.back()}
 			>
 				<ChevronLeft className="h-4 w-4" />
