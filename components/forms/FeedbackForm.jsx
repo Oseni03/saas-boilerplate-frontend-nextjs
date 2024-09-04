@@ -45,7 +45,7 @@ function FeedbackForm() {
 					/>
 				))}
 			</div>
-			<Button type="submit" disabled={isLoading}>
+			<Button type="submit" className="text-white" disabled={isLoading}>
 				{isLoading ? <Spinner /> : "Submit"}
 			</Button>
 		</form>

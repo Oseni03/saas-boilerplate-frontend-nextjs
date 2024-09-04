@@ -43,7 +43,7 @@ function SupportForm() {
 			isLoading={isLoading}
 			onSubmit={onSubmit}
 			btnText="Submit"
-			btnClassName="item-start"
+			btnClassName="item-start text-white"
 		/>
 	);
 }

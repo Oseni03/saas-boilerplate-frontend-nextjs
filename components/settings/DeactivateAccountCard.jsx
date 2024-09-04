@@ -38,7 +38,10 @@ function DeactivateAccountCard() {
 					onClick={handleAccountDeactivation}
 					ButtonClassName="bg-red-700 hover:bg-red-900"
 				>
-					<Button size="sm" className="bg-red-700 hover:bg-red-900">
+					<Button
+						size="sm"
+						className="bg-red-700 hover:bg-red-900 text-white"
+					>
 						Deactivate account
 					</Button>
 				</MyAlertDialog>

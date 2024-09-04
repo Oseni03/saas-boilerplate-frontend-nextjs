@@ -22,7 +22,7 @@ export default function Page() {
 					<p className="text-sm text-muted-foreground">
 						You can start selling as soon as you add a product.
 					</p>
-					<Button className="mt-4">Add Product</Button>
+					<Button className="mt-4 text-white">Add Product</Button>
 				</div>
 			</div>
 		</main>

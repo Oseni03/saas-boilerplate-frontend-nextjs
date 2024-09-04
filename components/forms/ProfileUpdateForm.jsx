@@ -56,7 +56,7 @@ function ProfileUpdateForm() {
 			config={config}
 			isLoading={isLoading}
 			btnText="Update"
-			btnClassName="justify-end"
+			btnClassName="text-white"
 			onChange={onChange}
 			onSubmit={onSubmit}
 		/>

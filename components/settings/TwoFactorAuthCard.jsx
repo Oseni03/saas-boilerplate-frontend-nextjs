@@ -25,14 +25,18 @@ function TwoFactorAuthCard() {
 	return (
 		<Card x-chunk="dashboard-07-chunk-5">
 			<CardHeader>
-				<CardTitle>Two-Step AUthentication</CardTitle>
+				<CardTitle>Two-Step Authentication</CardTitle>
 				<CardDescription>
 					Protect your account with two-step authentication.
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
 				{user?.otp_enabled ? (
-					<Button size="sm" onClick={() => handleDisableOTPAuth()}>
+					<Button
+						size="sm text-white"
+						onClick={() => handleDisableOTPAuth()}
+						className="text-white"
+					>
 						Disable
 					</Button>
 				) : (
@@ -41,6 +45,7 @@ function TwoFactorAuthCard() {
 						onClick={() =>
 							router.push("/settings/two-factor-auth/verify")
 						}
+						className="text-white"
 					>
 						Enable
 					</Button>

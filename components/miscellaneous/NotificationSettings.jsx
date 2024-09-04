@@ -107,7 +107,9 @@ export function SwitchForm() {
 						/>
 					</div>
 				</div>
-				<Button type="submit">Submit</Button>
+				<Button type="submit" className="text-white">
+					Submit
+				</Button>
 			</form>
 		</Form>
 	);

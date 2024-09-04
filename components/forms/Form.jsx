@@ -33,7 +33,9 @@ function Form({
 				))}
 				<Button
 					type="submit"
-					className={btnClassName ? btnClassName : "w-full"}
+					className={
+						btnClassName ? btnClassName : "w-full text-white"
+					}
 					disabled={isLoading}
 				>
 					{isLoading ? <Spinner /> : `${btnText}`}

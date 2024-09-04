@@ -11,10 +11,11 @@ function NavLink({ isSelected, href, children, ...props }, ref) {
 		"text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700":
 			!isSelected,
 	});
+	const NewClassName = cn(props.className, "dark:text-gray-100");
 	if (!href && !props.trigger) {
 		return (
 			<Button
-				className={props.className}
+				className={NewClassName}
 				type="button"
 				onClick={props.onClick}
 			>
@@ -25,7 +26,7 @@ function NavLink({ isSelected, href, children, ...props }, ref) {
 	if (props.trigger) {
 		return (
 			<Popover className="relative">
-				<PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+				<PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100">
 					{props.trigger}
 				</PopoverButton>
 
@@ -84,7 +85,7 @@ function NavLink({ isSelected, href, children, ...props }, ref) {
 
 	return (
 		<Link
-			className={props.className}
+			className={NewClassName}
 			href={href}
 			aria-current={isSelected ? "page" : "none"}
 		>

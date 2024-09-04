@@ -18,7 +18,7 @@ function UpgradeCard() {
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<Button size="sm" className="w-full">
+					<Button size="sm" className="w-full text-white">
 						Upgrade
 					</Button>
 				</CardContent>

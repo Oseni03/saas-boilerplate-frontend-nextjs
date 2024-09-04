@@ -26,7 +26,7 @@ export default function Header() {
 	);
 
 	return (
-		<header className="bg-white">
+		<header className="bg-white dark:bg-gray-900 dark:text-white">
 			<nav
 				aria-label="Global"
 				className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -45,7 +45,7 @@ export default function Header() {
 					<button
 						type="button"
 						onClick={() => setMobileMenuOpen(true)}
-						className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+						className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-white"
 					>
 						<span className="sr-only">Open main menu</span>
 						<Bars3Icon aria-hidden="true" className="h-6 w-6" />

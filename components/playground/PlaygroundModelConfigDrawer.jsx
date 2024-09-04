@@ -14,7 +14,11 @@ function PlaygroundModelConfigDrawer() {
 	return (
 		<Drawer>
 			<DrawerTrigger asChild>
-				<Button variant="ghost" size="icon" className="lg:hidden">
+				<Button
+					variant="ghost"
+					size="icon"
+					className="lg:hidden text-white"
+				>
 					<Settings className="size-4" />
 					<span className="sr-only">Settings</span>
 				</Button>

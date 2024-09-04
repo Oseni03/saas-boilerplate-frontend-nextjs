@@ -31,7 +31,11 @@ function OTPForm({ name, value, isLoading, onChange, onSubmit }) {
 					<InputOTPSlot index={5} />
 				</InputOTPGroup>
 			</InputOTP>
-			<Button type="submit" className="w-full" disabled={isLoading}>
+			<Button
+				type="submit"
+				className="w-full text-white"
+				disabled={isLoading}
+			>
 				{isLoading ? <Spinner /> : `Verify`}
 			</Button>
 		</form>

@@ -82,7 +82,7 @@ function NotificationPreferenceForm() {
 					))}
 				</TableBody>
 			</Table>
-			<Button type="submit" disabled={isLoading}>
+			<Button type="submit" className="text-white" disabled={isLoading}>
 				{isLoading ? <Spinner /> : "Update"}
 			</Button>
 		</form>

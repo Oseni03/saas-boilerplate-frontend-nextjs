@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import Provider from "@/redux/provider";
 import Setup from "../components/utils/Setup";
 import FeedbackWidget from "@/components/common/FeedbackWidget";
+import { ThemeProvider } from "@/components/common/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +19,18 @@ export default function RootLayout({ children }) {
 		<html lang="en" className="min-h-max h-full">
 			<body className={inter.className}>
 				<Provider>
-					<Setup />
-					<div>
-						{children}
-						<FeedbackWidget />
-					</div>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+						disableTransitionOnChange
+					>
+						<Setup />
+						<div>
+							{children}
+							<FeedbackWidget />
+						</div>
+					</ThemeProvider>
 					{/* className="mx-auto max-w-xl px-2 sm:px-6 lg:px-8 py-8" */}
 				</Provider>
 			</body>
