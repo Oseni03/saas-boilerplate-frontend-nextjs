@@ -22,11 +22,11 @@ function PricingCard({
 		createCheckout(props.price_id)
 			.unwrap()
 			.then((data) => {
-				redirect(data.url);
+				router.push(data.url);
 			})
 			.catch((error) => {
 				console.log(error);
-				if (error.status === 401) {
+				if ((error.status === 401) | (error.status === 403)) {
 					toast.error("Sign in required");
 					let loginWithNextUrl = `${LOGIN_URL}?next=${pathname}`;
 					if (LOGIN_URL === pathname) {

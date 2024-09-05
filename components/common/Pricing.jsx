@@ -114,24 +114,17 @@ const DUMMY_YEARLY_CONFIG = [
 ];
 
 const Pricing = () => {
-	const { monthlyResp } = useRetrievePricesQuery({ interval: monthly });
-	console.log(monthlyResp);
+	let { data: monthlyConfig } = useRetrievePricesQuery({ interval: monthly });
+	console.log(monthlyConfig);
 
-	const { yearlyResp } = useRetrievePricesQuery({ interval: yearly });
-	console.log(yearlyResp);
+	let { data: yearlyConfig } = useRetrievePricesQuery({ interval: yearly });
+	console.log(yearlyConfig);
 
-	let monthlyConfig = [];
-	let yearlyConfig = [];
-
-	if (monthlyResp) {
-		monthlyConfig = monthlyResp;
-	} else {
+	if (!monthlyConfig) {
 		monthlyConfig = DUMMY_MONTHLY_CONFIG;
 	}
 
-	if (yearlyResp) {
-		yearlyConfig = yearlyResp;
-	} else {
+	if (!yearlyConfig) {
 		yearlyConfig = DUMMY_YEARLY_CONFIG;
 	}
 
@@ -170,7 +163,7 @@ const Pricing = () => {
 									currency={item.currency}
 									trial_period_days={item.trial_period_days}
 									interval_display={item.interval_display}
-									price_id="cytvubyiq"
+									price_id={item.id}
 								>
 									{item.subscription_name}
 								</PricingCard>
