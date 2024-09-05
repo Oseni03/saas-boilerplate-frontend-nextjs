@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { CircleUser } from "lucide-react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useAppDispatch } from "@/redux/hooks";
 import { logout as setLogout } from "@/redux/features/authSlice";

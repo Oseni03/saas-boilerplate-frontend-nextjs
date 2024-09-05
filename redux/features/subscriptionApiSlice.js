@@ -14,7 +14,7 @@ const settingsApiSlice = apiSlice.injectEndpoints({
 			}),
 		}),
 		finalizeCheckout: builder.mutation({
-			query: ({ session_id }) => ({
+			query: (session_id) => ({
 				url: `/subscriptions/finalize-checkout/`,
 				method: "POST",
 				body: { session_id },
