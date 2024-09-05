@@ -34,8 +34,7 @@ function UserDropdownMenu() {
 		createBillingPortal()
 			.unwrap()
 			.then((data) => {
-				console.log(url);
-				redirect(data.url);
+				router.push(data.url);
 			});
 	};
 
