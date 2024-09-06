@@ -1,10 +1,12 @@
 import {
 	Home,
 	LineChart,
+	Link,
 	MessageCircleIcon,
 	Package,
 	ShoppingCart,
 	Users,
+	Zap,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -64,6 +66,15 @@ export default function DashboardNavConfig({ iconClassName }) {
 				<>
 					<MessageCircleIcon className={iconClassName} />
 					Playground
+				</>
+			),
+		},
+		{
+			href: "/integrations",
+			children: (
+				<>
+					<Link className={iconClassName} />
+					Integrations
 				</>
 			),
 		},
