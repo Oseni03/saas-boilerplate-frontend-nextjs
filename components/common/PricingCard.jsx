@@ -1,10 +1,7 @@
-"use client";
 import { Button } from "../ui/button";
 import { useCreateCheckoutMutation } from "@/redux/features/subscriptionApiSlice";
-import { usePathname, useRouter } from "next/navigation";
-import { toast } from "react-toastify";
-import { LOGIN_URL } from "@/utils/constants";
 import Spinner from "./Spinner";
+import useCreateCheckout from "@/hooks/use-create-checkout";
 
 function PricingCard({
 	features,
@@ -16,29 +13,8 @@ function PricingCard({
 	...props
 }) {
 	const [createCheckout, { isLoading }] = useCreateCheckoutMutation();
-	const router = useRouter();
-	const pathname = usePathname();
 
-	const handleSubscribeButton = () => {
-		createCheckout(props.price_id)
-			.unwrap()
-			.then((data) => {
-				router.push(data.url);
-			})
-			.catch((error) => {
-				console.log(error);
-				if ((error.status === 401) | (error.status === 403)) {
-					toast.error("Sign in required");
-					let loginWithNextUrl = `${LOGIN_URL}?next=/#pricing`;
-					if (LOGIN_URL === pathname) {
-						loginWithNextUrl = `${LOGIN_URL}`;
-					}
-					router.push(loginWithNextUrl);
-				} else {
-					toast.error("Something went wrong");
-				}
-			});
-	};
+	const handleCheckout = useCreateCheckout(createCheckout, props.price_id);
 
 	const btnText = props.trial_period_days ? "Start trial" : "Get started";
 
@@ -79,7 +55,7 @@ function PricingCard({
 				))}
 			</ul>
 			<Button
-				onClick={handleSubscribeButton}
+				onClick={handleCheckout}
 				className="text-white bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary"
 				disabled={isLoading}
 			>
