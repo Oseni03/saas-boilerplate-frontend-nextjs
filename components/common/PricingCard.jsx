@@ -1,9 +1,10 @@
 "use client";
 import { Button } from "../ui/button";
 import { useCreateCheckoutMutation } from "@/redux/features/subscriptionApiSlice";
-import { redirect, usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { LOGIN_URL } from "@/utils/constants";
+import Spinner from "./Spinner";
 
 function PricingCard({
 	features,
@@ -14,7 +15,7 @@ function PricingCard({
 	currency,
 	...props
 }) {
-	const [createCheckout] = useCreateCheckoutMutation();
+	const [createCheckout, { isLoading }] = useCreateCheckoutMutation();
 	const router = useRouter();
 	const pathname = usePathname();
 
@@ -28,7 +29,7 @@ function PricingCard({
 				console.log(error);
 				if ((error.status === 401) | (error.status === 403)) {
 					toast.error("Sign in required");
-					let loginWithNextUrl = `${LOGIN_URL}?next=${pathname}`;
+					let loginWithNextUrl = `${LOGIN_URL}?next=/#pricing`;
 					if (LOGIN_URL === pathname) {
 						loginWithNextUrl = `${LOGIN_URL}`;
 					}
@@ -38,6 +39,9 @@ function PricingCard({
 				}
 			});
 	};
+
+	const btnText = props.trial_period_days ? "Start trial" : "Get started";
+
 	return (
 		<div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
 			<h3 className="mb-4 text-2xl font-semibold">{children}</h3>
@@ -77,8 +81,9 @@ function PricingCard({
 			<Button
 				onClick={handleSubscribeButton}
 				className="text-white bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary"
+				disabled={isLoading}
 			>
-				Get started
+				{isLoading ? <Spinner /> : `${btnText}`}
 			</Button>
 		</div>
 	);

@@ -61,7 +61,7 @@ const config = [
 		],
 	},
 	{
-		href: "#",
+		href: "/#features",
 		className: "text-sm font-semibold leading-6 text-gray-900",
 		children: "Features",
 	},
@@ -76,7 +76,7 @@ const config = [
 		children: "About us",
 	},
 	{
-		href: "#",
+		href: "/#pricing",
 		className: "text-sm font-semibold leading-6 text-gray-900",
 		children: "Pricing",
 	},

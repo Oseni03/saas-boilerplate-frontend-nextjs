@@ -26,7 +26,10 @@ export default function Header() {
 	);
 
 	return (
-		<header className="bg-white dark:bg-gray-900 dark:text-white">
+		<header
+			className="bg-white dark:bg-gray-900 dark:text-white"
+			id="header"
+		>
 			<nav
 				aria-label="Global"
 				className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"

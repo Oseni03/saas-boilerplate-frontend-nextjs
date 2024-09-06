@@ -1,10 +1,9 @@
 import React from "react";
-import Image from "next/image"; // Ensure Image is imported
 import Link from "next/link";
 
 function Hero() {
 	return (
-		<section className="bg-white dark:bg-gray-900">
+		<section className="bg-white dark:bg-gray-900" id="hero">
 			<div className="py-14 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12">
 				<Link
 					href="#"
@@ -41,9 +40,9 @@ function Hero() {
 				<div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
 					<Link
 						href="#"
-						className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary focus:ring-4"
+						className="inline-flex justify-center items-center py-4 px-6 text-base font-medium text-center text-white rounded-lg bg-primary focus:ring-4"
 					>
-						Learn more
+						Start for free
 						<svg
 							className="ml-2 -mr-1 w-5 h-5"
 							fill="currentColor"
@@ -59,7 +58,7 @@ function Hero() {
 					</Link>
 					<Link
 						href="#"
-						className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+						className="inline-flex justify-center items-center py-4 px-6 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
 					>
 						<svg
 							className="mr-2 -ml-1 w-5 h-5"

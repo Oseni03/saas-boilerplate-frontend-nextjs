@@ -115,10 +115,8 @@ const DUMMY_YEARLY_CONFIG = [
 
 const Pricing = () => {
 	let { data: monthlyConfig } = useRetrievePricesQuery({ interval: monthly });
-	console.log(monthlyConfig);
 
 	let { data: yearlyConfig } = useRetrievePricesQuery({ interval: yearly });
-	console.log(yearlyConfig);
 
 	if (!monthlyConfig) {
 		monthlyConfig = DUMMY_MONTHLY_CONFIG;
@@ -129,7 +127,7 @@ const Pricing = () => {
 	}
 
 	return (
-		<section className="bg-white dark:bg-gray-900">
+		<section className="bg-white dark:bg-gray-900" id="pricing">
 			<div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
 				<div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
 					<h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -151,9 +149,9 @@ const Pricing = () => {
 					<TabsContent value="monthly">
 						<div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
 							{/* Pricing Card */}
-							{monthlyConfig.map((item) => (
+							{monthlyConfig.map((item, index) => (
 								<PricingCard
-									key={item.price}
+									key={index}
 									subscription_subtitle={
 										item.subscription_subtitle
 									}
@@ -173,9 +171,9 @@ const Pricing = () => {
 					<TabsContent value="yearly">
 						<div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
 							{/* Pricing Card */}
-							{yearlyConfig.map((item) => (
+							{yearlyConfig.map((item, index) => (
 								<PricingCard
-									key={item.price}
+									key={index}
 									subscription_subtitle={
 										item.subscription_subtitle
 									}

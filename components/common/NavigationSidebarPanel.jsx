@@ -49,7 +49,7 @@ const products = [
 	},
 ];
 const generals = [
-	{ name: "Feaures", href: "" },
+	{ name: "Feaures", href: "/#features" },
 	{ name: "Marketplace", href: "" },
 	{ name: "About us", href: "" },
 	{ name: "pricing", href: "/#pricing" },
