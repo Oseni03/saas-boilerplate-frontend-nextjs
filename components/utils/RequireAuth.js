@@ -2,8 +2,8 @@
 import React from "react";
 import { useAppSelector } from "@/redux/hooks";
 import { usePathname, useRouter } from "next/navigation";
-import Spinner from "../common/Spinner";
 import { LOGIN_URL } from "@/utils/constants";
+import Loading from "../common/Loading";
 
 function RequireAuth({ children }) {
 	const { isLoading, isAuthenticated } = useAppSelector(
@@ -13,13 +13,7 @@ function RequireAuth({ children }) {
 	const pathname = usePathname();
 
 	if (isLoading) {
-		return (
-			<div className="h-screen flex items-center">
-				<div className="mx-auto">
-					<Spinner />;
-				</div>
-			</div>
-		);
+		return <Loading />;
 	}
 
 	if (!isAuthenticated) {

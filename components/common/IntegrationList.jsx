@@ -1,42 +1,30 @@
+"use client";
+import { useRetrieveThirdpartiesQuery } from "@/redux/features/integrationApiSlice";
 import IntegrationCard from "./IntegrationCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Loading from "./Loading";
 
 const IntegrationList = () => {
-	const integrations = [
-		{
-			id: 1,
-			title: "Linear + Intercom",
-			iconSrc: "/path-to-linear-icon.png",
-			updatedDate: "May 22, 2022",
-			author: "Frankie Sullivan",
-			active: true,
-		},
-		{
-			id: 2,
-			title: "Mailchimp + Typeform",
-			iconSrc: "/path-to-mailchimp-icon.png",
-			updatedDate: "May 20, 2022",
-			author: "Frankie Sullivan",
-			active: false,
-		},
-		{
-			id: 2,
-			title: "Stripe",
-			iconSrc: "/path-to-mailchimp-icon.png",
-			updatedDate: "May 20, 2022",
-			author: "Frankie Sullivan",
-			active: false,
-		},
-		{
-			id: 2,
-			title: "QuickBooks",
-			iconSrc: "/path-to-mailchimp-icon.png",
-			updatedDate: "May 20, 2022",
-			author: "Frankie Sullivan",
-			active: false,
-		},
-		// Add more integrations here...
-	];
+	const {
+		data: allThridparties,
+		isLoading,
+		isError,
+	} = useRetrieveThirdpartiesQuery();
+
+	if (isLoading) {
+		return <Loading />;
+	}
+
+	let activeThirdparties = [];
+	let inactiveThirdparties = [];
+
+	allThridparties.forEach((item) => {
+		if (item.is_connected) {
+			activeThirdparties.push(item);
+		} else {
+			inactiveThirdparties.push(item);
+		}
+	});
 
 	return (
 		<main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
@@ -64,10 +52,30 @@ const IntegrationList = () => {
 					</div>
 					<TabsContent value="all">
 						<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-							{integrations.map((integration) => (
+							{allThridparties.map((thirdparty) => (
 								<IntegrationCard
-									key={integration.id}
-									integration={integration}
+									key={thirdparty.id}
+									thirdparty={thirdparty}
+								/>
+							))}
+						</div>
+					</TabsContent>
+					<TabsContent value="active">
+						<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+							{activeThirdparties.map((thirdparty) => (
+								<IntegrationCard
+									key={thirdparty.id}
+									thirdparty={thirdparty}
+								/>
+							))}
+						</div>
+					</TabsContent>
+					<TabsContent value="inactive">
+						<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+							{inactiveThirdparties.map((thirdparty) => (
+								<IntegrationCard
+									key={thirdparty.id}
+									thirdparty={thirdparty}
 								/>
 							))}
 						</div>

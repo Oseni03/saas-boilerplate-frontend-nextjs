@@ -3,25 +3,57 @@ import { Switch } from "../ui/switch";
 import {
 	Card,
 	CardContent,
-	CardDescription,
 	CardFooter,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { MoreVertical } from "lucide-react";
 import { Separator } from "../ui/separator";
+import useIntegrationActivation from "@/hooks/use-integration-activation";
 
-const IntegrationCard = ({ integration }) => {
+const IntegrationCard = ({ thirdparty }) => {
+	console.log(thirdparty);
+	const { isLoading, onChange } = useIntegrationActivation(
+		thirdparty.id,
+		thirdparty.is_connected
+	);
+
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle>{integration.title}</CardTitle>
+				<div className="flex items-center justify-between">
+					<CardTitle>{thirdparty.name}</CardTitle>
+					<DropdownMenu>
+						<DropdownMenuTrigger asChild>
+							<Button
+								aria-haspopup="true"
+								size="icon"
+								variant="ghost"
+							>
+								<MoreVertical className="h-4 w-4" />
+								<span className="sr-only">Toggle menu</span>
+							</Button>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent align="end">
+							<DropdownMenuLabel>Actions</DropdownMenuLabel>
+							<DropdownMenuSeparator />
+							<DropdownMenuItem>Deactivate</DropdownMenuItem>
+							<DropdownMenuItem>Delete</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
+				</div>
 			</CardHeader>
+
 			<CardContent>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Fugit iure maiores rerum laborum facilis ducimus nobis
-					aperiam praesentium.
-				</p>
+				<p>{thirdparty.description}</p>
 			</CardContent>
 			{/* Add separator between content and footer */}
 			<Separator className="my-4" />
@@ -31,7 +63,11 @@ const IntegrationCard = ({ integration }) => {
 
 				{/* Switch aligned to the right */}
 				<div>
-					<Switch checked={integration.active} />
+					<Switch
+						disable={isLoading}
+						onChange={onChange}
+						checked={thirdparty.is_connected}
+					/>
 				</div>
 			</CardFooter>
 		</Card>
