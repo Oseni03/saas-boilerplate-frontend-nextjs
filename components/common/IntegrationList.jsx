@@ -1,7 +1,5 @@
 import IntegrationCard from "./IntegrationCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "../ui/button";
-import { PlusCircle } from "lucide-react";
 
 const IntegrationList = () => {
 	const integrations = [
