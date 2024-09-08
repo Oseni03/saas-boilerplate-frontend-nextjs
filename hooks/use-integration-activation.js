@@ -3,26 +3,44 @@ import {
 	useActivateIntegrationMutation,
 	useDeactivateIntegrationMutation,
 } from "@/redux/features/integrationApiSlice";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
-export default function useIntegrationActivation(integration_id, active) {
+export default function useIntegrationActivation(thirdparty_slug, active) {
 	const [activateIntegration, { isLoading: activationLoading }] =
 		useActivateIntegrationMutation();
 	const [deactivateIntegration, { isLoading: deactivationLoading }] =
 		useDeactivateIntegrationMutation();
+	const router = useRouter();
+
+	const [connected, setConnected] = useState(active);
 
 	const onChange = () => {
 		if (active === true) {
-			deactivateIntegration(integration_id)
+			deactivateIntegration(thirdparty_slug)
 				.unwrap()
-				.then(() => {
+				.then((resp) => {
+					setConnected(false);
+					console.log(resp);
 					toast.success("Integration deactivated");
+				})
+				.catch((error) => {
+					console.log(error);
 				});
 		} else {
-			activateIntegration(integration_id)
+			activateIntegration(thirdparty_slug)
 				.unwrap()
-				.then(() => {
+				.then((resp) => {
+					setConnected(false);
+					console.log(resp);
+					if (resp.oauth_url) {
+						router.push(resp.oauth_url);
+					}
 					toast.success("Integration activated");
+				})
+				.catch((error) => {
+					console.log(error);
 				});
 		}
 	};
@@ -35,5 +53,5 @@ export default function useIntegrationActivation(integration_id, active) {
 		isLoading = activationLoading;
 	}
 
-	return { isLoading, onChange };
+	return { connected, isLoading, onChange };
 }

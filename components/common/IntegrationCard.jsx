@@ -21,8 +21,8 @@ import useIntegrationActivation from "@/hooks/use-integration-activation";
 
 const IntegrationCard = ({ thirdparty }) => {
 	console.log(thirdparty);
-	const { isLoading, onChange } = useIntegrationActivation(
-		thirdparty.id,
+	const { connected, isLoading, onChange } = useIntegrationActivation(
+		thirdparty.slug,
 		thirdparty.is_connected
 	);
 
@@ -65,8 +65,8 @@ const IntegrationCard = ({ thirdparty }) => {
 				<div>
 					<Switch
 						disable={isLoading}
-						onChange={onChange}
-						checked={thirdparty.is_connected}
+						onClick={onChange}
+						checked={connected}
 					/>
 				</div>
 			</CardFooter>
