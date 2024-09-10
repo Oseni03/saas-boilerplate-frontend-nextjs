@@ -7,7 +7,11 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { useState } from "react";
 
-export default function useIntegrationActivation(thirdparty_slug, active) {
+export default function useIntegrationActivation(
+	thirdparty_slug,
+	integration_id,
+	active
+) {
 	const [activateIntegration, { isLoading: activationLoading }] =
 		useActivateIntegrationMutation();
 	const [deactivateIntegration, { isLoading: deactivationLoading }] =
@@ -18,12 +22,12 @@ export default function useIntegrationActivation(thirdparty_slug, active) {
 
 	const onChange = () => {
 		if (active === true) {
-			deactivateIntegration(thirdparty_slug)
+			deactivateIntegration(integration_id)
 				.unwrap()
-				.then((resp) => {
+				.then(() => {
 					setConnected(false);
-					console.log(resp);
 					toast.success("Integration deactivated");
+					router.refresh();
 				})
 				.catch((error) => {
 					console.log(error);
@@ -33,7 +37,6 @@ export default function useIntegrationActivation(thirdparty_slug, active) {
 				.unwrap()
 				.then((resp) => {
 					setConnected(false);
-					console.log(resp);
 					if (resp.oauth_url) {
 						router.push(resp.oauth_url);
 					}

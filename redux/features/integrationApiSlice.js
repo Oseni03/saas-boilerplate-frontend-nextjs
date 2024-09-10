@@ -14,9 +14,9 @@ const integrationApiSlice = apiSlice.injectEndpoints({
 			}),
 		}),
 		deactivateIntegration: builder.mutation({
-			query: (slug) => ({
-				url: `/integrations/deactivate/${slug}/`,
-				method: "POST",
+			query: (pk) => ({
+				url: `/integrations/deactivate/${pk}/`,
+				method: "DELETE",
 			}),
 		}),
 		initiateCallback: builder.mutation({

@@ -18,10 +18,12 @@ import {
 import { MoreVertical } from "lucide-react";
 import { Separator } from "../ui/separator";
 import useIntegrationActivation from "@/hooks/use-integration-activation";
+import Spinner from "./Spinner";
 
 const IntegrationCard = ({ thirdparty }) => {
 	const { connected, isLoading, onChange } = useIntegrationActivation(
 		thirdparty.slug,
+		thirdparty.integration_id,
 		thirdparty.is_connected
 	);
 
@@ -58,7 +60,7 @@ const IntegrationCard = ({ thirdparty }) => {
 			<Separator className="my-4" />
 			<CardFooter className="flex items-center justify-between">
 				{/* Button aligned to the left */}
-				<Button>View integration</Button>
+				<Button>{isLoading ? <Spinner /> : `View integration`}</Button>
 
 				{/* Switch aligned to the right */}
 				<div>
