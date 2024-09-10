@@ -9,9 +9,8 @@ const integrationApiSlice = apiSlice.injectEndpoints({
 		}),
 		activateIntegration: builder.mutation({
 			query: (thirdparty) => ({
-				url: `/integrations/activate/`,
+				url: `/integrations/activate/${thirdparty}/`,
 				method: "POST",
-				body: { thirdparty },
 			}),
 		}),
 		deactivateIntegration: builder.mutation({

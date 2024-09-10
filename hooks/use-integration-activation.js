@@ -37,7 +37,6 @@ export default function useIntegrationActivation(thirdparty_slug, active) {
 					if (resp.oauth_url) {
 						router.push(resp.oauth_url);
 					}
-					toast.success("Integration activated");
 				})
 				.catch((error) => {
 					console.log(error);

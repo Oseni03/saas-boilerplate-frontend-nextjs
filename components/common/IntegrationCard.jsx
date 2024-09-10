@@ -20,7 +20,6 @@ import { Separator } from "../ui/separator";
 import useIntegrationActivation from "@/hooks/use-integration-activation";
 
 const IntegrationCard = ({ thirdparty }) => {
-	console.log(thirdparty);
 	const { connected, isLoading, onChange } = useIntegrationActivation(
 		thirdparty.slug,
 		thirdparty.is_connected
