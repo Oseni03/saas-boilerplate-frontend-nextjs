@@ -1,7 +1,5 @@
 import React from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { BellRing, Check, Bell } from "lucide-react";
-
+import { Check, Bell, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,7 +15,7 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from "@/components/ui/popover";
-import { Switch } from "@/components/ui/switch";
+import Link from "next/link";
 
 const notifications = [
 	{
@@ -34,7 +32,7 @@ const notifications = [
 	},
 ];
 
-function NotificationDialog({ className, ...props }) {
+function NotificationPopover({ className, ...props }) {
 	return (
 		<Popover>
 			<PopoverTrigger asChild>
@@ -50,24 +48,19 @@ function NotificationDialog({ className, ...props }) {
 			<PopoverContent className="sm:max-w-[425px]">
 				<Card className={cn("w-[380px]", className)} {...props}>
 					<CardHeader>
-						<CardTitle>Notifications</CardTitle>
+						<CardTitle>
+							<div className="flex justify-between item-center">
+								Notifications
+								<Link href="/settings#notification-settings">
+									<Settings />
+								</Link>
+							</div>
+						</CardTitle>
 						<CardDescription>
 							You have 3 unread messages.
 						</CardDescription>
 					</CardHeader>
 					<CardContent className="grid gap-4">
-						<div className=" flex items-center space-x-4 rounded-md border p-4">
-							<BellRing />
-							<div className="flex-1 space-y-1">
-								<p className="text-sm font-medium leading-none">
-									Push Notifications
-								</p>
-								<p className="text-sm text-muted-foreground">
-									Send notifications to device.
-								</p>
-							</div>
-							<Switch />
-						</div>
 						<div>
 							{notifications.map((notification, index) => (
 								<div
@@ -98,4 +91,4 @@ function NotificationDialog({ className, ...props }) {
 	);
 }
 
-export default NotificationDialog;
+export default NotificationPopover;

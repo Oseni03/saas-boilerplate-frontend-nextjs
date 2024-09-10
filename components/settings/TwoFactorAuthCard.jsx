@@ -23,7 +23,7 @@ function TwoFactorAuthCard() {
 	};
 
 	return (
-		<Card x-chunk="dashboard-07-chunk-5">
+		<Card x-chunk="dashboard-07-chunk-5" id="two-factor-settings">
 			<CardHeader>
 				<CardTitle>Two-Step Authentication</CardTitle>
 				<CardDescription>

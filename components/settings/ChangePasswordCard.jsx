@@ -9,7 +9,7 @@ import {
 
 function ChangePasswordCard() {
 	return (
-		<Card x-chunk="dashboard-07-chunk-1">
+		<Card x-chunk="dashboard-07-chunk-1" id="change-settings">
 			<CardHeader>
 				<CardTitle>Change Password</CardTitle>
 				<CardDescription>

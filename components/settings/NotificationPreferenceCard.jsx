@@ -9,7 +9,7 @@ import NotificationPreferenceForm from "@/components/forms/NotificationPreferenc
 
 function NotificationPreferenceCard() {
 	return (
-		<Card x-chunk="dashboard-07-chunk-1">
+		<Card x-chunk="dashboard-07-chunk-1" id="notification-settings">
 			<CardHeader>
 				<CardTitle>Notification preference</CardTitle>
 				<CardDescription>

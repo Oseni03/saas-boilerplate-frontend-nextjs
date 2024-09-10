@@ -9,7 +9,7 @@ import {
 
 function ProfileUpdateCard() {
 	return (
-		<Card x-chunk="dashboard-07-chunk-0">
+		<Card x-chunk="dashboard-07-chunk-0" id="profile-settings">
 			<CardHeader>
 				<CardTitle>Profile Details</CardTitle>
 				<CardDescription>Update your profile settings</CardDescription>

@@ -24,7 +24,11 @@ function DeactivateAccountCard() {
 			});
 	};
 	return (
-		<Card x-chunk="dashboard-07-chunk-5" className="border-red-800">
+		<Card
+			x-chunk="dashboard-07-chunk-5"
+			className="border-red-800"
+			id="account-deactivation-settings"
+		>
 			<CardHeader>
 				<CardTitle>Deactivate Account</CardTitle>
 				<CardDescription>
