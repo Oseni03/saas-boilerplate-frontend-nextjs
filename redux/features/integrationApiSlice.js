@@ -19,6 +19,13 @@ const integrationApiSlice = apiSlice.injectEndpoints({
 				method: "POST",
 			}),
 		}),
+		initiateCallback: builder.mutation({
+			query: ({ state, code }) => ({
+				url: `/integrations/callback/`,
+				method: "POST",
+				body: { state, code },
+			}),
+		}),
 	}),
 });
 
@@ -26,4 +33,5 @@ export const {
 	useRetrieveThirdpartiesQuery,
 	useActivateIntegrationMutation,
 	useDeactivateIntegrationMutation,
+	useInitiateCallbackMutation,
 } = integrationApiSlice;
