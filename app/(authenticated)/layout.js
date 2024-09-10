@@ -1,6 +1,7 @@
 import RequireAuth from "@/components/utils/RequireAuth";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import SideBar from "@/components/common/SideBar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const metadata = {
 	title: "SaaS Boilerplate",
@@ -13,8 +14,10 @@ export default function RootLayout({ children }) {
 			<div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
 				<SideBar />
 				<div className="flex flex-col sm:gap-4">
-					<DashboardHeader />
-					{children}
+					<ScrollArea className="h-screen">
+						<DashboardHeader />
+						{children}
+					</ScrollArea>
 				</div>
 			</div>
 		</RequireAuth>

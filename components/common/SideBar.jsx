@@ -10,6 +10,7 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import DashboardNavLinks from "@/components/dashboard/DashboardNavLinks";
+import NotificationDialog from "./NotificationDialog";
 
 function SideBar() {
 	return (
@@ -23,14 +24,7 @@ function SideBar() {
 						<Package2 className="h-6 w-6" />
 						<span className="">Acme Inc</span>
 					</Link>
-					<Button
-						variant="outline"
-						size="icon"
-						className="ml-auto h-8 w-8"
-					>
-						<Bell className="h-4 w-4" />
-						<span className="sr-only">Toggle notifications</span>
-					</Button>
+					<NotificationDialog />
 				</div>
 				<div className="flex-1">
 					<DashboardNavLinks />
