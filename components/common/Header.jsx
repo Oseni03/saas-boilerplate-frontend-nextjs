@@ -19,9 +19,7 @@ export default function Header() {
 
 	const guestButtons = () => (
 		<>
-			<NavLink onClick={() => router.push("/auth/register")}>
-				Get started
-			</NavLink>
+			<NavLink onClick={() => router.push("/auth/login")}>Login</NavLink>
 		</>
 	);
 

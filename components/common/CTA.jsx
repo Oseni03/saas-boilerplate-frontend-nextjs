@@ -14,7 +14,7 @@ function CTA() {
 						required.
 					</p>
 					<Link
-						href="#"
+						href="/auth/register"
 						className="text-white bg-primary hover:bg-primary focus:ring-4 focus:ring-primary font-bold rounded-lg text-lg px-5 py-3 mr-2 mb-2 dark:bg-primary dark:hover:bg-primary focus:outline-none dark:focus:ring-primary"
 					>
 						Free trial for 7 days
