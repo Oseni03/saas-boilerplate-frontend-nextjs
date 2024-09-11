@@ -1,5 +1,5 @@
 "use client";
-import Form from "./Form";
+import Form from "@/components/forms/Form";
 import useChangeUserPassword from "@/hooks/use-change-user-password";
 
 function ChangeUserPasswordForm() {

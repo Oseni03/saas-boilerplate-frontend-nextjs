@@ -1,5 +1,5 @@
 "use client";
-import OTPForm from "./OTPForm";
+import OTPForm from "@/components/common/OTPForm";
 import useValidateOTP from "@/hooks/use-validate-otp";
 
 function ValidateOTPForm() {

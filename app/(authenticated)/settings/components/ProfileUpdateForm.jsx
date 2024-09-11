@@ -1,7 +1,7 @@
 "use client";
 import { useAppSelector } from "@/redux/hooks";
 import useProfileUpdate from "@/hooks/use-profile-update";
-import Form from "./Form";
+import Form from "@/components/forms/Form";
 
 function ProfileUpdateForm() {
 	const user = useAppSelector((state) => state.user.user);

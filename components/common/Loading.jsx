@@ -5,7 +5,7 @@ function Loading() {
 	return (
 		<div className="h-screen flex items-center">
 			<div className="mx-auto">
-				<Spinner />;
+				<Spinner />
 			</div>
 		</div>
 	);

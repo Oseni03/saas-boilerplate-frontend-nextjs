@@ -1,6 +1,6 @@
 "use client";
 import useRegister from "@/hooks/use-register";
-import Form from "./Form";
+import Form from "@/components/forms/Form";
 import { continueWithGoogle } from "@/utils";
 
 function RegisterForm() {

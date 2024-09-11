@@ -8,7 +8,7 @@ import {
 	DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
-import ModelConfigForm from "../forms/ModelConfigForm";
+import ModelConfigForm from "./ModelConfigForm";
 
 function PlaygroundModelConfigDrawer() {
 	return (

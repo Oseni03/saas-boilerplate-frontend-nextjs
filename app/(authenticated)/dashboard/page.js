@@ -1,4 +1,4 @@
-import DashboardTable from "@/components/dashboard/DashboardTable";
+import DashboardTable from "./components/DashboardTable";
 import React from "react";
 
 export const metadata = {

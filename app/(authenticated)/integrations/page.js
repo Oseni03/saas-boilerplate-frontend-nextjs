@@ -1,4 +1,4 @@
-import IntegrationList from "@/components/common/IntegrationList";
+import IntegrationList from "./components/IntegrationList";
 import React from "react";
 
 function Page() {

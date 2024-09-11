@@ -2,7 +2,7 @@
 import { useRetrieveThirdpartiesQuery } from "@/redux/features/integrationApiSlice";
 import IntegrationCard from "./IntegrationCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Loading from "./Loading";
+import Loading from "@/components/common/Loading";
 
 const IntegrationList = () => {
 	const {

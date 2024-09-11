@@ -1,5 +1,5 @@
 "use client";
-import Form from "./Form";
+import Form from "@/components/forms/Form";
 import usePasswordReset from "@/hooks/use-password-reset";
 
 function ForgotPasswordForm() {

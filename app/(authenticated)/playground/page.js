@@ -1,9 +1,9 @@
 import { Share } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import ModelConfigurationForm from "@/components/forms/ModelConfigurationForm";
-import PlaygroundChatForm from "@/components/forms/PlaygroundChatForm";
-import PlaygroundModelConfigDrawer from "@/components/playground/PlaygroundModelConfigDrawer";
+import ModelConfigurationForm from "./components/ModelConfigurationForm";
+import PlaygroundChatForm from "./components/PlaygroundChatForm";
+import PlaygroundModelConfigDrawer from "./components/PlaygroundModelConfigDrawer";
 
 export const metadata = {
 	title: "Playground - Boilerplate",

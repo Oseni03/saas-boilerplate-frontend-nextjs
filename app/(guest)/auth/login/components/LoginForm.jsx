@@ -1,5 +1,5 @@
 "use client";
-import Form from "./Form";
+import Form from "../../../../../components/forms/Form";
 import useLogin from "@/hooks/use-login";
 import { continueWithGoogle } from "@/utils";
 

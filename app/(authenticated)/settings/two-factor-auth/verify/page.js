@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import QRCode from "qrcode";
 import { useEnable2FAAuthMutation } from "@/redux/features/settingsApiSlice";
 import useVerifyOTP from "@/hooks/use-verify-otp";
-import OTPForm from "@/components/forms/OTPForm";
+import OTPForm from "../../../../../components/common/OTPForm";
 
 function Page() {
 	const [enable2FAAuth] = useEnable2FAAuthMutation();

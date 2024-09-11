@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ForgotPasswordForm from "@/components/forms/ForgotPasswordForm";
+import ForgotPasswordForm from "./components/ForgotPasswordForm";
 import Link from "next/link";
 
 export const metadata = {

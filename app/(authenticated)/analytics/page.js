@@ -16,7 +16,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import TransactionsTable from "@/components/tables/TransactionsTable";
+import TransactionsTable from "@/app/(authenticated)/analytics/components/TransactionsTable";
 
 export const metadata = {
 	title: "Analytics - Boilerplate",

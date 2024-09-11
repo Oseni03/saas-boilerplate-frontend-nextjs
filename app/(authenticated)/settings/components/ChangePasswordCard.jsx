@@ -1,4 +1,4 @@
-import ChangeUserPasswordForm from "../forms/ChangeUserPasswordForm";
+import ChangeUserPasswordForm from "./ChangeUserPasswordForm";
 import {
 	Card,
 	CardContent,

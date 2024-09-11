@@ -5,7 +5,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import NotificationPreferenceForm from "@/components/forms/NotificationPreferenceForm";
+import NotificationPreferenceForm from "@/app/(authenticated)/settings/components/NotificationPreferenceForm";
 
 function NotificationPreferenceCard() {
 	return (

@@ -1,4 +1,4 @@
-import ProfileUpdateForm from "@/components/forms/ProfileUpdateForm";
+import ProfileUpdateForm from "./ProfileUpdateForm";
 import {
 	Card,
 	CardContent,

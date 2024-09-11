@@ -1,9 +1,9 @@
-import ProfileUpdateCard from "@/components/settings/ProfileUpdateCard";
-import NotificationPreferenceCard from "@/components/settings/NotificationPreferenceCard";
-import ChangePasswordCard from "@/components/settings/ChangePasswordCard";
-import DeactivateAccountCard from "@/components/settings/DeactivateAccountCard";
-import SettingsHeader from "@/components/settings/SettingsHeader";
-import TwoFactorAuthCard from "@/components/settings/TwoFactorAuthCard";
+import ProfileUpdateCard from "./components/ProfileUpdateCard";
+import NotificationPreferenceCard from "./components/NotificationPreferenceCard";
+import ChangePasswordCard from "./components/ChangePasswordCard";
+import DeactivateAccountCard from "./components/DeactivateAccountCard";
+import SettingsHeader from "./components/SettingsHeader";
+import TwoFactorAuthCard from "./components/TwoFactorAuthCard";
 
 export const metadata = {
 	title: "Account settings - Boilerplate",

@@ -1,5 +1,5 @@
-import { Button } from "../ui/button";
-import { Switch } from "../ui/switch";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import {
 	Card,
 	CardContent,
@@ -16,9 +16,9 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { MoreVertical } from "lucide-react";
-import { Separator } from "../ui/separator";
+import { Separator } from "@/components/ui/separator";
 import useIntegrationActivation from "@/hooks/use-integration-activation";
-import Spinner from "./Spinner";
+import Spinner from "@/components/common/Spinner";
 
 const IntegrationCard = ({ thirdparty }) => {
 	const { connected, isLoading, onChange } = useIntegrationActivation(

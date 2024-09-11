@@ -1,8 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import nextImage from "@/public/next.svg";
-import PasswordResetForm from "@/components/forms/PasswordResetForm";
+import PasswordResetForm from "../../components/PasswordResetForm";
 
 export const metadata = {
 	title: "Password reset - Boilerplate",
