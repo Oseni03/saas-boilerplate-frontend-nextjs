@@ -2,6 +2,7 @@ import {
 	Home,
 	LineChart,
 	Link,
+	ListCheckIcon,
 	MessageCircleIcon,
 	Package,
 	ShoppingCart,
@@ -75,6 +76,15 @@ export default function DashboardNavConfig({ iconClassName }) {
 				<>
 					<Link className={iconClassName} />
 					Integrations
+				</>
+			),
+		},
+		{
+			href: "/tasks",
+			children: (
+				<>
+					<ListCheckIcon className={iconClassName} />
+					Tasks
 				</>
 			),
 		},
