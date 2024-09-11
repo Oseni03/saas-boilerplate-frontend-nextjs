@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useCreateSupportMutation } from "@/redux/features/ticketsApiSlice";
+import { handleError } from "@/lib/utils";
 
 function useCreateSupport() {
 	const [createSupport, { isLoading }] = useCreateSupportMutation();
@@ -30,8 +31,7 @@ function useCreateSupport() {
 				toast.success("Support message submitted");
 			})
 			.catch((error) => {
-				console.log(error);
-				toast.error("Invalid input data");
+				handleError(error);
 			});
 	};
 

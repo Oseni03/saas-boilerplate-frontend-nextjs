@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useUpdateNotificationPreferenceMutation } from "@/redux/features/settingsApiSlice";
+import { handleError } from "@/lib/utils";
 
 function useNotificationPreferenceUpdate(preference) {
 	const [updatePreference, { isLoading }] =
@@ -38,8 +39,9 @@ function useNotificationPreferenceUpdate(preference) {
 			.then(() => {
 				toast.success("Notification preference updated");
 			})
-			.catch(() => {
-				toast.error("Invalid data");
+			.catch((error) => {
+				// Check if the error has a response and data
+				handleError(error);
 			});
 	};
 	return {

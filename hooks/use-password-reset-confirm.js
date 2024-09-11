@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useResetPasswordConfirmMutation } from "@/redux/features/authApiSlice";
 import { PASSWORD_RESET_SUCCESSFUL_REDIRECT_URL } from "@/utils/constants";
+import { handleError } from "@/lib/utils";
 
 function usePasswordResetConfirm(user, token) {
 	const [reset, { isLoading }] = useResetPasswordConfirmMutation();
@@ -24,8 +25,8 @@ function usePasswordResetConfirm(user, token) {
 				toast.success("Password reset successful");
 				router.push(PASSWORD_RESET_SUCCESSFUL_REDIRECT_URL);
 			})
-			.catch(() => {
-				toast.error("Password reset failed");
+			.catch((error) => {
+				handleError(error);
 			});
 	};
 	return {

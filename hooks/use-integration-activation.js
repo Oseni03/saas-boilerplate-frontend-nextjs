@@ -6,6 +6,7 @@ import {
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { handleError } from "@/lib/utils";
 
 export default function useIntegrationActivation(
 	thirdparty_slug,
@@ -30,7 +31,7 @@ export default function useIntegrationActivation(
 					router.refresh();
 				})
 				.catch((error) => {
-					console.log(error);
+					handleError(error);
 				});
 		} else {
 			activateIntegration(thirdparty_slug)
@@ -42,7 +43,7 @@ export default function useIntegrationActivation(
 					}
 				})
 				.catch((error) => {
-					console.log(error);
+					handleError(error);
 				});
 		}
 	};

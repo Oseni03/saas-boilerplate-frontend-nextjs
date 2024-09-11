@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useUpdateProfileMutation } from "@/redux/features/settingsApiSlice";
 import { setUser } from "@/redux/features/userSlice";
 import { useAppDispatch } from "@/redux/hooks";
+import { handleError } from "@/lib/utils";
 
 function useProfileUpdate(user) {
 	const [updateProfile, { isLoading }] = useUpdateProfileMutation();
@@ -32,8 +33,8 @@ function useProfileUpdate(user) {
 				dispatch(setUser(data));
 				toast.success("Profile updated");
 			})
-			.catch(() => {
-				toast.error("Invalid data");
+			.catch((error) => {
+				handleError(error);
 			});
 	};
 	return {

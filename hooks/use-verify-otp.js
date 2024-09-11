@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useVerifyOTPMutation } from "@/redux/features/settingsApiSlice";
+import { handleError } from "@/lib/utils";
 
 function useVerifyOTP() {
 	const [verify, { isLoading }] = useVerifyOTPMutation();
@@ -23,8 +24,7 @@ function useVerifyOTP() {
 				router.push("/settings");
 			})
 			.catch((error) => {
-				console.log(error);
-				toast.error("Invalid OTP code");
+				handleError(error);
 			});
 	};
 	return {

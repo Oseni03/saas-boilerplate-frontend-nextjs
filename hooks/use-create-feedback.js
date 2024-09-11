@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useCreateFeedbackMutation } from "@/redux/features/ticketsApiSlice";
+import { handleError } from "@/lib/utils";
 
 function useCreateFeedback() {
 	const [createFeedback, { isLoading }] = useCreateFeedbackMutation();
@@ -33,8 +34,7 @@ function useCreateFeedback() {
 				toast.success("Feedback submitted");
 			})
 			.catch((error) => {
-				console.log(error);
-				toast.error("Invalid input data");
+				handleError(error);
 			});
 	};
 

@@ -23,7 +23,7 @@ function useCreateCheckout(createCheckout, price_id) {
 					}
 					router.push(loginWithNextUrl);
 				} else {
-					toast.error("Something went wrong");
+					handleError(error);
 				}
 			});
 	};

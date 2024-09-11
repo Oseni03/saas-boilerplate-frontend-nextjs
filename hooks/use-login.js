@@ -6,6 +6,7 @@ import { setAuth } from "@/redux/features/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { LOGIN_REDIRECT_URL } from "@/utils/constants";
 import { setUser } from "@/redux/features/userSlice";
+import { handleError } from "@/lib/utils";
 
 const invalidNextUrl = ["/auth/login", "/auth/logout", "password-reset"];
 
@@ -52,8 +53,8 @@ function useLogin() {
 					}
 				}
 			})
-			.catch(() => {
-				toast.error("Invalid login details");
+			.catch((error) => {
+				handleError(error);
 			});
 	};
 	return {

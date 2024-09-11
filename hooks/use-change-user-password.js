@@ -6,6 +6,7 @@ import { useChangeUserPasswordMutation } from "@/redux/features/settingsApiSlice
 import { setAuth } from "@/redux/features/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import useVerify from "./use-verify";
+import { handleError } from "@/lib/utils";
 
 function useChangeUserPassword() {
 	const [changePassword, { isLoading }] = useChangeUserPasswordMutation();
@@ -34,7 +35,7 @@ function useChangeUserPassword() {
 				toast.success("Password change");
 			})
 			.catch(() => {
-				toast.error("Invalid password");
+				handleError(error);
 			});
 	};
 	return {
