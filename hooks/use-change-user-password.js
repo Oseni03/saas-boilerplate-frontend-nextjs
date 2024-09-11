@@ -34,7 +34,7 @@ function useChangeUserPassword() {
 				useVerify();
 				toast.success("Password change");
 			})
-			.catch(() => {
+			.catch((error) => {
 				handleError(error);
 			});
 	};
