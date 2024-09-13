@@ -26,9 +26,10 @@ function useRegister() {
 
 		register({ email, password })
 			.unwrap()
-			.then(() => {
+			.then((resp) => {
+				console.log(resp);
 				toast.success("Please check email to activate account");
-				router.push(REGISTRATION_REDIRECT_URL);
+				router.push("/auth/register/confirm");
 			})
 			.catch((error) => {
 				handleError(error);
