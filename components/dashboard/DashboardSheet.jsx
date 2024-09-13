@@ -8,6 +8,8 @@ import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import UpgradeCard from "../common/UpgradeCard";
 import DashboardNavConfig from "../../utils/DashboardNavConfig";
+import NotificationPopover from "../common/NotificationPopover";
+import { WEBSITE_NAME } from "@/utils/constants";
 
 const iconClassName = "h-5 w-5";
 const linksConfig = DashboardNavConfig(iconClassName);
@@ -34,13 +36,13 @@ function DashboardSheet() {
 			</SheetTrigger>
 			<SheetContent side="left" className="flex flex-col">
 				<nav className="grid gap-2 text-lg font-medium">
-					<NavLink
-						href="/"
-						className="flex items-center gap-2 text-lg font-semibold"
-					>
-						<Package2 className="h-6 w-6" />
-						<span className="sr-only">Acme Inc</span>
-					</NavLink>
+					<div className="flex items-center justify-between gap-2 text-lg font-semibold mt-5">
+						<NavLink href="/">
+							<Package2 className="h-6 w-6" />
+							<span className="sr-only">{WEBSITE_NAME}</span>
+						</NavLink>
+						<NotificationPopover />
+					</div>
 					{linksConfig.map((link, index) => (
 						<NavLink
 							key={index}
