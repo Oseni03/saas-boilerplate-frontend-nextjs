@@ -24,7 +24,7 @@ function RegisterForm() {
 	];
 
 	const social = {
-		socialtext: "Sign up with Google",
+		socialtext: "Continue with Google",
 		onClick: continueWithGoogle,
 	};
 

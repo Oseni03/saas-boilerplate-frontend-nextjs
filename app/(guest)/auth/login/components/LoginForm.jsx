@@ -1,5 +1,5 @@
 "use client";
-import Form from "../../../../../components/forms/Form";
+import Form from "@/components/forms/Form";
 import useLogin from "@/hooks/use-login";
 import { continueWithGoogle } from "@/utils";
 
@@ -28,7 +28,7 @@ function LoginForm() {
 	];
 
 	const social = {
-		socialtext: "Login with Google",
+		socialtext: "Continue with Google",
 		onClick: continueWithGoogle,
 	};
 
