@@ -55,7 +55,7 @@ function ProfileUpdateForm() {
 		<Form
 			config={config}
 			isLoading={isLoading}
-			btnText="Update"
+			btnText="Update profile"
 			btnClassName="text-white"
 			onChange={onChange}
 			onSubmit={onSubmit}

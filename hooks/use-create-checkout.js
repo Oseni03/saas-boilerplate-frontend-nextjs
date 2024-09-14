@@ -1,6 +1,7 @@
 import { useRouter, usePathname } from "next/navigation";
 import { toast } from "react-toastify";
 import { siteConfig } from "@/config/site";
+import { handleError } from "@/lib/utils";
 
 const LOGIN_URL = siteConfig.links.login;
 

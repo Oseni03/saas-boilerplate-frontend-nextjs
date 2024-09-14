@@ -27,7 +27,7 @@ function ChangeUserPasswordForm() {
 		<Form
 			config={config}
 			isLoading={isLoading}
-			btnText="Update"
+			btnText="Update password"
 			btnClassName="text-white"
 			onChange={onChange}
 			onSubmit={onSubmit}

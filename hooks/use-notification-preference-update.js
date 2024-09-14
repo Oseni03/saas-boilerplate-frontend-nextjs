@@ -8,26 +8,13 @@ function useNotificationPreferenceUpdate(preference) {
 	const [updatePreference, { isLoading }] =
 		useUpdateNotificationPreferenceMutation();
 
-	const [formData, setFormData] = useState({
-		email_notification: preference?.email_notification,
-		inapp_notification: preference?.inapp_notification,
-		push_notification: preference?.push_notification,
-		sms_notification: preference?.sms_notification,
-	});
-
-	const {
-		email_notification,
-		inapp_notification,
-		push_notification,
-		sms_notification,
-	} = formData;
-
-	const onChange = (name, value) => {
-		setFormData({ ...formData, [name]: value });
-	};
-
-	const onSubmit = (event) => {
-		event.preventDefault();
+	function handleFormSubmit(formData) {
+		const {
+			email_notification,
+			inapp_notification,
+			push_notification,
+			sms_notification,
+		} = formData;
 
 		updatePreference({
 			email_notification,
@@ -43,15 +30,10 @@ function useNotificationPreferenceUpdate(preference) {
 				// Check if the error has a response and data
 				handleError(error);
 			});
-	};
+	}
 	return {
-		email_notification,
-		inapp_notification,
-		push_notification,
-		sms_notification,
 		isLoading,
-		onChange,
-		onSubmit,
+		handleFormSubmit,
 	};
 }
 

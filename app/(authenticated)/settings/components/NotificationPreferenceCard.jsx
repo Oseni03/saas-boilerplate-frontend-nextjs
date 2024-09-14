@@ -5,21 +5,23 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import NotificationPreferenceForm from "@/app/(authenticated)/settings/components/NotificationPreferenceForm";
 
 function NotificationPreferenceCard() {
 	return (
-		<Card x-chunk="dashboard-07-chunk-1" id="notification-settings">
-			<CardHeader>
-				<CardTitle>Notification preference</CardTitle>
-				<CardDescription>
-					Lipsum dolor sit amet, consectetur adipiscing elit
-				</CardDescription>
-			</CardHeader>
-			<CardContent>
-				<NotificationPreferenceForm />
-			</CardContent>
-		</Card>
+		<div className="space-y-6 mx-3">
+			<div>
+				<h3 className="text-lg font-medium">
+					Notifications preference
+				</h3>
+				<p className="text-sm text-muted-foreground">
+					Configure how you receive notifications.
+				</p>
+			</div>
+			<Separator />
+			<NotificationPreferenceForm />
+		</div>
 	);
 }
 
