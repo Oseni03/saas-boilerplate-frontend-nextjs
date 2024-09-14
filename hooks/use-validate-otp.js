@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useValidateOTPMutation } from "@/redux/features/authApiSlice";
-import { LOGIN_REDIRECT_URL } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
 import { useAppDispatch } from "@/redux/hooks";
 import { setAuth } from "@/redux/features/authSlice";
 import { setUser } from "@/redux/features/userSlice";
@@ -27,7 +27,7 @@ function useValidateOTP() {
 				dispatch(setAuth());
 				dispatch(setUser(resp.user));
 				toast.success("Login successful");
-				router.replace(LOGIN_REDIRECT_URL);
+				router.replace(siteConfig.links.loginRedirect);
 			});
 	};
 	return {

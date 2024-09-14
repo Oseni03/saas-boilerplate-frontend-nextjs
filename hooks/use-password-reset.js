@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useResetPasswordMutation } from "@/redux/features/authApiSlice";
-import { PASSWORD_RESET_REDIRECT_URL } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
 
 function usePasswordReset() {
 	const [reset, { isLoading }] = useResetPasswordMutation();
@@ -21,7 +21,7 @@ function usePasswordReset() {
 			.unwrap()
 			.finally(() => {
 				toast.success("Check your email for further instructions");
-				router.push(PASSWORD_RESET_REDIRECT_URL);
+				router.push(siteConfig.links.passwordResetRedirect);
 			});
 	};
 	return {

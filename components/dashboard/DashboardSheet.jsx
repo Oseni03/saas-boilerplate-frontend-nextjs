@@ -7,9 +7,9 @@ import { Menu, Package2 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import UpgradeCard from "../common/UpgradeCard";
-import DashboardNavConfig from "../../utils/DashboardNavConfig";
-import NotificationPopover from "../common/NotificationPopover";
-import { WEBSITE_NAME } from "@/utils/constants";
+import DashboardNavConfig from "@/utils/DashboardNavConfig";
+import NotificationPopover from "@/components/common/NotificationPopover";
+import { siteConfig } from "@/config/site";
 
 const iconClassName = "h-5 w-5";
 const linksConfig = DashboardNavConfig(iconClassName);
@@ -39,7 +39,7 @@ function DashboardSheet() {
 					<div className="flex items-center justify-between gap-2 text-lg font-semibold mt-5">
 						<NavLink href="/">
 							<Package2 className="h-6 w-6" />
-							<span className="sr-only">{WEBSITE_NAME}</span>
+							<span className="sr-only">{siteConfig.name}</span>
 						</NavLink>
 						<NotificationPopover />
 					</div>

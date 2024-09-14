@@ -1,59 +1,9 @@
 import React from "react";
 import SidebarPanel from "./SidebarPanel";
-import {
-	ArrowPathIcon,
-	ChartPieIcon,
-	CursorArrowRaysIcon,
-	FingerPrintIcon,
-	SquaresPlusIcon,
-} from "@heroicons/react/24/outline";
-import { PhoneIcon, PlayCircleIcon } from "@heroicons/react/20/solid";
+import { siteConfig } from "@/config/site";
 
-const products = [
-	{
-		name: "products",
-		dropDowns: [
-			{
-				name: "Analytics",
-				description: "Get a better understanding of your traffic",
-				href: "#",
-				icon: ChartPieIcon,
-			},
-			{
-				name: "Engagement",
-				description: "Speak directly to your customers",
-				href: "#",
-				icon: CursorArrowRaysIcon,
-			},
-			{
-				name: "Security",
-				description: "Your customers’ data will be safe and secure",
-				href: "#",
-				icon: FingerPrintIcon,
-			},
-			{
-				name: "Integrations",
-				description: "Connect with third-party tools",
-				href: "#",
-				icon: SquaresPlusIcon,
-			},
-			{
-				name: "Automations",
-				description: "Build strategic funnels that will convert",
-				href: "#",
-				icon: ArrowPathIcon,
-			},
-			{ name: "Watch demo", href: "#", icon: PlayCircleIcon },
-			{ name: "Contact sales", href: "#", icon: PhoneIcon },
-		],
-	},
-];
-const generals = [
-	{ name: "Feaures", href: "/#features" },
-	{ name: "Marketplace", href: "" },
-	{ name: "About us", href: "" },
-	{ name: "pricing", href: "/#pricing" },
-];
+const products = siteConfig.sideBarNav.products;
+const generals = siteConfig.sideBarNav.generals;
 
 function NavigationSidebarPanel({ isAuthenticated, router }) {
 	let items = [];

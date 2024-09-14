@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useResetPasswordConfirmMutation } from "@/redux/features/authApiSlice";
-import { PASSWORD_RESET_SUCCESSFUL_REDIRECT_URL } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
 import { handleError } from "@/lib/utils";
 
 function usePasswordResetConfirm(user, token) {
@@ -23,7 +23,7 @@ function usePasswordResetConfirm(user, token) {
 			.unwrap()
 			.then(() => {
 				toast.success("Password reset successful");
-				router.push(PASSWORD_RESET_SUCCESSFUL_REDIRECT_URL);
+				router.push(siteConfig.links.passwordResetSuccessful);
 			})
 			.catch((error) => {
 				handleError(error);

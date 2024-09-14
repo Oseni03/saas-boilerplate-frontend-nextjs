@@ -1,5 +1,5 @@
 import React from "react";
-import { TESTIMONIALS } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
 
 const Testimonials = () => {
 	return (
@@ -16,7 +16,7 @@ const Testimonials = () => {
 					</p>
 				</div>
 				<div className="grid mb-8 lg:mb-12 lg:grid-cols-2">
-					{TESTIMONIALS.map((testimonial, index) => (
+					{siteConfig.testimonials.map((testimonial, index) => (
 						<figure
 							key={index}
 							className={`flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700 ${

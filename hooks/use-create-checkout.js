@@ -1,6 +1,8 @@
 import { useRouter, usePathname } from "next/navigation";
 import { toast } from "react-toastify";
-import { LOGIN_URL } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
+
+const LOGIN_URL = siteConfig.links.login;
 
 function useCreateCheckout(createCheckout, price_id) {
 	const router = useRouter();

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { WEBSITE_NAME } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
 
 function Footer() {
 	return (
@@ -18,7 +18,7 @@ function Footer() {
 								alt="FlowBite Logo"
 							/>
 							<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-								{WEBSITE_NAME}
+								{siteConfig.name}
 							</span>
 						</Link>
 					</div>
@@ -33,7 +33,7 @@ function Footer() {
 										href="https://flowbite.com"
 										className="hover:underline"
 									>
-										{WEBSITE_NAME}
+										{siteConfig.name}
 									</Link>
 								</li>
 								<li>
@@ -96,7 +96,7 @@ function Footer() {
 							href="https://flowbite.com"
 							className="hover:underline"
 						>
-							{WEBSITE_NAME}™
+							{siteConfig.name}™
 						</Link>
 						. All Rights Reserved.
 					</span>

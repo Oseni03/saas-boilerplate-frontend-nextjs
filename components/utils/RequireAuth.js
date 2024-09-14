@@ -2,8 +2,10 @@
 import React from "react";
 import { useAppSelector } from "@/redux/hooks";
 import { usePathname, useRouter } from "next/navigation";
-import { LOGIN_URL } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
 import Loading from "../common/Loading";
+
+const LOGIN_URL = siteConfig.links.login;
 
 function RequireAuth({ children }) {
 	const { isLoading, isAuthenticated } = useAppSelector(

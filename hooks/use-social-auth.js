@@ -4,7 +4,7 @@ import { setAuth } from "@/redux/features/authSlice";
 import { setUser } from "@/redux/features/userSlice";
 import { toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";
-import { LOGIN_REDIRECT_URL, LOGIN_URL } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
 import { handleError } from "@/lib/utils";
 
 function useSocialAuth(authenticate, provider) {
@@ -26,7 +26,7 @@ function useSocialAuth(authenticate, provider) {
 					dispatch(setAuth());
 					dispatch(setUser(resp.user));
 					toast.success("Logged in");
-					router.replace(LOGIN_REDIRECT_URL);
+					router.replace(siteConfig.links.loginRedirect);
 				})
 				.catch((error) => {
 					handleError(error);

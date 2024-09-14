@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useLoginMutation } from "@/redux/features/authApiSlice";
 import { setAuth } from "@/redux/features/authSlice";
 import { useAppDispatch } from "@/redux/hooks";
-import { LOGIN_REDIRECT_URL } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
 import { setUser } from "@/redux/features/userSlice";
 import { handleError } from "@/lib/utils";
 
@@ -49,7 +49,7 @@ function useLogin() {
 					if (nexturlValid) {
 						router.replace(nextUrl);
 					} else {
-						router.replace(LOGIN_REDIRECT_URL);
+						router.replace(siteConfig.links.loginRedirect);
 					}
 				}
 			})

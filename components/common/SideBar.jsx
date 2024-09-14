@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Bell, Package2 } from "lucide-react";
-import { WEBSITE_NAME } from "@/utils/constants";
+import { siteConfig } from "@/config/site";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -23,7 +23,7 @@ function SideBar() {
 						className="flex items-center gap-2 font-semibold"
 					>
 						<Package2 className="h-6 w-6" />
-						<span>{WEBSITE_NAME}</span>
+						<span>{siteConfig.name}</span>
 					</Link>
 					<NotificationPopover />
 				</div>
